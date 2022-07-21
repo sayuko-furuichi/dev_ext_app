@@ -1,0 +1,39 @@
+POST https://api.line.me/v2/oauth/accessToken
+Content-Type: application/x-www-form-urlencoded
+
+{
+    "grant_type":"client_credentials",
+    "client_id":"1657185923",
+    "client_secret":"f86e25cbed76a9bdc270e44529ad402c"
+}
+
+###
+
+ GET  https://dev-linemn.herokuapp.com/public/js/getusers.js
+
+###
+//LINEpayAPI
+POST https://sandbox-api-pay.line.me/v3/payments/request
+
+###
+POST https://api.line.me/v2/bot/user/{userId}/richmenu/{richMenuId}
+
+###
+POST https://api.line.me/message/v3/notifier/token
+Content-Type:application/json
+Authorization:Bearer F2ePo4WWFbfZz7i28+yhjJYENhRwIgA9SRChmtCbDWZ3An7jK5pB2UJH9fN8hNa5t8P8lepLBlPWl5UaHu2ysLHxbQdKumljTtYcMM+Iqa2WY30Ih5EaFAjxLW8+wnSPKyZvszXCAkaPE4NzCRk/B49PbdgDzCFqoOLOYbqAITQ=
+
+{
+    "liffAccessToken": "2seYK4MPBiMrAIwonawei2V0Xn97pn7tErgsIAYl"
+}
+
+
+###
+
+POST https://api.line.me/oauth2/v2.1/verify
+Content-Type:application/x-www-form-urlencoded
+
+{
+    "id_token": "26eDIaHgKritUm4W4ZoSJKHEB8CTcGbyJjnUoEjq",
+    "client_id":"1657185923",
+}
