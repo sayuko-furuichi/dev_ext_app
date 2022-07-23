@@ -67,6 +67,7 @@ class Login extends Controller
         $decoded_data = json_decode($json_response, true);
 
         //アクセス
+        dd(array_keys( $decoded_data));
        
         //DBに格納
         $logUser =new LoginUser;
@@ -90,11 +91,11 @@ class Login extends Controller
         $api_url ='https://api.line.me/v2/profile';
 
         //エンコードされたURLで通信する
-        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
+        $headers = [ "Authorization:Bearer $access_token",];
 
         $curl_handle = curl_init();
 
-        curl_setopt($curl_handle, CURLOPT_POST, true);
+        curl_setopt($curl_handle, CURLOPT_HTTPGET, true);
         curl_setopt($curl_handle, CURLOPT_URL, $api_url);
         curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/callback&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77" );
         curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
