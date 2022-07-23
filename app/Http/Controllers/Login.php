@@ -66,7 +66,6 @@ class Login extends Controller
         $decoded_data = json_decode($json_response, true);
 
         //アクセス
-        $access_token = $decoded_data['access_token'];
 
         //DBに格納
         $logUser =new LoginUser;
@@ -76,6 +75,10 @@ class Login extends Controller
         $loguser->line_user_id = "";
 
         $logUser ->save();
+
+
+
+
 
         return view('getUser');
     }
