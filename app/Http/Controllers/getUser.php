@@ -28,29 +28,6 @@ class getUser extends Controller
 
         $api_url ='https://api.line.me/oauth2/v2.1/token';
 
- 
-        $data = 
-        "grant_type=authorization_code 
-      &code=$this->code
-      &redirect_uri=https://dev-ext-app.herokuapp.com/public/user
-       &client_id=1657292332
-       &client_secret=1b8433d37832199bf746a66e7d8a5a77"
-               ;
- 
- 
- 
- 
-        /*   $data = [
-            "grant_type=authorization_code" ,
-            "code=".$this->code,
-            "redirect_uri=https://dev-ext-app.herokuapp.com/public/user",
-            "client_id=1657292332",
-            "client_secret=1b8433d37832199bf746a66e7d8a5a77",
-                    ];
-*/
-        //ToJson
-        //  $data = json_encode($data);
-
         //エンコードされたURLで通信する
         $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
@@ -60,19 +37,20 @@ class getUser extends Controller
         curl_setopt($curl_handle, CURLOPT_URL, $api_url);
         curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/user&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77" );
         curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
-    //    dd($curl_handle);
+                // curl_exec()の結果を文字列にする
+        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
+        
+
         //実行
         $json_response = curl_exec($curl_handle);
 
-        dd($json_response);
         //close
         curl_close($curl_handle);
 
         //デコード
         $decoded_data = json_decode($json_response, true);
        
-
+        dd( $decoded_data);
         //アクセス
         $access_token = $decoded_data->access_token;
         $id_token = $decoded_data->id_token;
