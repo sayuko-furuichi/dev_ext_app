@@ -61,12 +61,16 @@ class Login extends Controller
         //close
         curl_close($curl_handle);
 
+        //値が読めないので工夫
+        $mjJson= mb_convert_encoding($json_response, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+
         //デコード
-        $decoded_data = json_decode($json_response, true);
+        $decoded_data = json_decode( $mjJson, true);
        
-        dd( $decoded_data);
+        dd($decoded_data);
         //アクセス
         $access_token = $decoded_data->access_token;
+
 
 
         return view('getUser');
