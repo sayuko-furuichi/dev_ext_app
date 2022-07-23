@@ -13,8 +13,7 @@ class getUser extends Controller
     public function index(Request $request)
     {
         //ログインに成功してredirectされた場合
-        if(isset($request)){
-            
+        if(isset($request->code)){
 
             return view('getUser');
 }else{
