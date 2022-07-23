@@ -26,20 +26,20 @@ class getUser extends Controller
         
         $this->code= $request->code;
 
-        $api_url ='https://api.line.me/oauth2/v2.1/token';
+        $api_url ='https://api.line.me/oauth2/v2.1/token?';
 
         $data = [
-            "grant_type" => "authorization_code" ,
-            "code"=>$this->code,
-            "redirect_uri"=>"https://dev-ext-app.herokuapp.com/public/user",
-            "client_id"=>"1657292332",
-            "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77",
+            "grant_type=authorization_code" ,
+            "code=".$this->code,
+            "redirect_uri=https://dev-ext-app.herokuapp.com/public/user",
+            "client_id=1657292332",
+            "client_secret=1b8433d37832199bf746a66e7d8a5a77",
                     ];
 
         //ToJson
-     //  $data = json_encode($data);
+        //  $data = json_encode($data);
 
-     //エンコードされたURLで通信する
+        //エンコードされたURLで通信する
         $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
         $curl_handle = curl_init();
@@ -47,13 +47,13 @@ class getUser extends Controller
         curl_setopt($curl_handle, CURLOPT_POST, true);
         curl_setopt($curl_handle, CURLOPT_URL, $api_url);
         curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data);
-       curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
-                    dd($curl_handle);
+        dd($curl_handle);
         //実行
         $json_response = curl_exec($curl_handle);
 
-                dd($json_response);
+        dd($json_response);
         //close
         curl_close($curl_handle);
 
@@ -66,6 +66,15 @@ class getUser extends Controller
         $id_token = $decoded_data->id_token;
 
         echo($id_token);
+
+        // $api_url .= "grant_type=authorization_code";
+        // $api_url .= 
+
+
+
+
+
+
 
         return view('getUser');
     }
