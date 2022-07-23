@@ -40,7 +40,7 @@ class getUser extends Controller
 
                
         //ToJson
-     //  $data = json_encode($data);
+       $data = json_encode($data);
 
         $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
@@ -57,13 +57,13 @@ class getUser extends Controller
         //実行
         $json_response = curl_exec($curl_handle);
 
-
+                dd( $json_response);
         //close
         curl_close($curl_handle);
 
         //デコード
         $decoded_data = json_decode($json_response, true);
-        dd($decoded_data);
+       
 
         //アクセス
         $access_token = $decoded_data->access_token;
