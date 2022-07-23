@@ -9,7 +9,7 @@
     {{-- <link rel="stylesheet" href="{{ secure_asset('css/reset.css') }}"> --}}
     {{-- <link id="import-link" rel="import" href="./sub.html"> --}}
     <script src="https://unpkg.com/glottologist"></script>
-    <title>WELCOME TO LINEmini App</title>
+    <title>extarnal_web_app</title>
 </head>
 
 <body>
