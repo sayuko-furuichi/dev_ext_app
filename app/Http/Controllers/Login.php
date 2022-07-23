@@ -67,7 +67,7 @@ class Login extends Controller
         $decoded_data = json_decode($json_response, true);
 
         //アクセス
-        dd(array_keys( $decoded_data));
+        dd($decoded_data['access_token']);
        
         //DBに格納
         $logUser =new LoginUser;
@@ -85,7 +85,12 @@ class Login extends Controller
         return view('getUser');
     }
 
-
+/**
+ *  function getProfile
+ *
+ * @param [type] $access_token
+ * @return UserProf
+ */
     public function getProfile($access_token){
 
         $api_url ='https://api.line.me/v2/profile';
