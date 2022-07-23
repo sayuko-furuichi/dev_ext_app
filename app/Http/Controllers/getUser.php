@@ -8,11 +8,18 @@ use Illuminate\Support\Facades\DB;
 
 class getUser extends Controller
 {
+    private $state;
+
     public function index(Request $request)
     {
         //ログインに成功してredirectされた場合
-
+        if($this->state ==$request -> state){
+            return view('getUser');
+        }
+        
         return view('getUser');
+ 
+        
     }
 
     //TODO:ログインが出来なかったときのエラー処理
@@ -29,7 +36,7 @@ class getUser extends Controller
         $encUrl= urlencode($cbUrl);
         $authUrl .= ("redirect_uri=" . $encUrl);
         //文字列生成
-        $state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
+        $this->state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
         $authUrl .= ("&stale=" . $state);
         //scope profileにしてるよ！
         $scope ="profile";
