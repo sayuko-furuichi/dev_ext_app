@@ -8,8 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class getUser extends Controller
 {
-    public function index()
+
+  
+    public function index(Request $request)
     {
+        if(isset($request)){
+
+            return view('getUser');
+}else{
+
+
+
     $authUrl = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&";
 
         $cbUrl="https://dev-ext-app.herokuapp.com/public/user";
@@ -30,6 +39,7 @@ class getUser extends Controller
 
         return redirect ($authUrl);
     }
+}
 
 
     public function getUser(Request $request)
