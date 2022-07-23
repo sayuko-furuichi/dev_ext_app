@@ -30,7 +30,7 @@ class getUser extends Controller
         $data = [
         "grant_type" => "authorization_code" ,
         "code"=>$this->code,
-        "redirect_uri"=>"$this->encUrl",
+        "redirect_uri"=>$this->encUrl,
         "client_id"=>"1657292332",
         "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77",
                 ];
@@ -64,7 +64,7 @@ class getUser extends Controller
         $id_token = $decoded_data->id_token;
 
         echo($id_token);
-        
+
         return view('getUser');
     }
 
