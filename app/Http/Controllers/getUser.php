@@ -44,7 +44,11 @@ class getUser extends Controller
 $response = $client->request(
     'POST',
     $url, // URLを設定
-    [ 'query' => $data]// パラメーターがあれば設定
+    [ "grant_type" => "authorization_code" ,
+    "code"=>$this->code,
+    "redirect_uri"=>urlencode("https://dev-ext-app.herokuapp.com/public/user"),
+    "client_id"=>"1657292332",
+    "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77", ]// パラメーターがあれば設定
 );
 echo $response->getStatusCode(); // 200
 echo $response->getReasonPhrase(); // OK
