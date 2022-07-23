@@ -99,7 +99,7 @@ class Login extends Controller
 
         $api_url ='https://api.line.me/v2/profile';
 
-        //エンコードされたURLで通信する
+        //GETでリクエストする。
         $headers = [ "Authorization:Bearer $access_token",];
 
         $curl_handle = curl_init();
