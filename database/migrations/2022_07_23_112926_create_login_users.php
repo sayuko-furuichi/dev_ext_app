@@ -15,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('login_users', function (Blueprint $table) {
             $table->id();
-            $table->string('state');
-            $table->string('auth_code')->nullable();
+            $table->string('line_user_id');
+            $table->string('access_token');
+            $table->string('refresh_token');
+            $table->string('scope');
+
             $table->timestamps();
         });
     }
