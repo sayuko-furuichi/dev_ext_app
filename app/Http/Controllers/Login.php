@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\LoginUser;
 
 class Login extends Controller
 {
@@ -68,6 +69,14 @@ class Login extends Controller
         $access_token = $decoded_data['access_token'];
         dd( $access_token);
 
+        //DBに格納
+        $logUser =new LoginUser;
+        $loguser->access_token = $decoded_data['access_token'];
+        $loguser->refresh_token = $decoded_data['refresh_token'];
+        $loguser->scope = $decoded_data['scope'];
+        $loguser->line_user_id = "";
+
+        $logUser ->save();
 
         return view('getUser');
     }
