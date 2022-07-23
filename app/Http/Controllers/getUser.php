@@ -47,7 +47,7 @@ class getUser extends Controller
         $authUrl .= ("&client_id=" .  $chaId);
 
 
-        return redirect($authUrl .=  $this->state);
+        return redirect($authUrl .= ("&stale=" . $this->state));
     }
 
 
