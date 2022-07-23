@@ -46,7 +46,7 @@ $response = $client->request(
     $url, // URLを設定
     [ "grant_type" => "authorization_code" ,
     "code"=>$this->code,
-    "redirect_uri"=>urlencode("https://dev-ext-app.herokuapp.com/public/user"),
+    "redirect_uri"=>"https://dev-ext-app.herokuapp.com/public/user",
     "client_id"=>"1657292332",
     "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77", ]// パラメーターがあれば設定
 );
@@ -65,6 +65,7 @@ dd($responseBody);
         //ToJson
      //  $data = json_encode($data);
 
+     //エンコードされたURLで通信する
         $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
 
