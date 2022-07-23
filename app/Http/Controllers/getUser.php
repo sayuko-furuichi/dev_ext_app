@@ -23,14 +23,13 @@ class getUser extends Controller
         }
         
         $this->code= $request->code;
-        $this->encUrl;
 
         $api_url ='https://api.line.me/oauth2/v2.1/token';
 
         $data = [
         "grant_type" => "authorization_code" ,
         "code"=>$this->code,
-        "redirect_uri"=>$this->encUrl,
+        "redirect_uri"=>urlencode("https://dev-ext-app.herokuapp.com/public/user"),
         "client_id"=>"1657292332",
         "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77",
                 ];
