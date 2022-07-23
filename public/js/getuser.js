@@ -5,8 +5,8 @@
 //イベントを使ってる。表示と値の取得の順番の為に書く
 window.onload = function () {
 	const useNodeJS = false;   // if you are not using a node server, set this value to false
-	const defaultLiffId = '1657185923-XNjWolQD';   // change the default LIFF value if you are not using a node server
-  const cloudfrontUrl = 'https://dev-linemn.herokuapp.com/public/';
+	const defaultLiffId = '1657292332';   // change the default LIFF value if you are not using a node server
+  const cloudfrontUrl = 'https://dev-ext-app.herokuapp.com/public/';
 
     //jQueryを使い、DOMの読み込みが完了したときに処理を実行
 	$(document).ready(function () {
