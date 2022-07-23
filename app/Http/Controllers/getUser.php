@@ -8,22 +8,24 @@ use Illuminate\Support\Facades\DB;
 
 class getUser extends Controller
 {
-
-  
     public function index(Request $request)
     {
         //ログインに成功してredirectされた場合
-        if(isset($request->code)){
 
-            return view('getUser');
-}else{
+        return view('getUser');
+    }
 
     //TODO:ログインが出来なかったときのエラー処理
 
-    $authUrl = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&";
+   
+
+
+    public function login()
+    {
+        $authUrl = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&";
 
         $cbUrl="https://dev-ext-app.herokuapp.com/public/user";
-        
+    
         $encUrl= urlencode($cbUrl);
         $authUrl .= ("redirect_uri=" . $encUrl);
         //文字列生成
@@ -38,9 +40,10 @@ class getUser extends Controller
         $authUrl .= ("&client_id=" .  $chaId);
 
 
-        return redirect ($authUrl);
+        return redirect($authUrl);
     }
-}
+
+
 
 
     public function getUser(Request $request)
@@ -105,11 +108,8 @@ class getUser extends Controller
         ->limit(10)
         ->get();
         
-        return view ('dbshow',[
+        return view('dbshow', [
             'items' => $items
         ]);
     }
-
-
-
 }

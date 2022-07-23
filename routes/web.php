@@ -22,7 +22,7 @@ Route::get('/', function () {
 //Route::get('/','App\Http\Controllers\HomeController@index');
 
 //Auth
-Route::get('/login','App\Http\Controllers\Logins@index')
+Route::get('/user/login','App\Http\Controllers\getUser@login')
 ->name('login.index');
 Route::post('/login','App\Http\Controllers\Logins@input')
 ->name('login.in');
