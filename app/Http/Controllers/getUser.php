@@ -40,9 +40,9 @@ class getUser extends Controller
 
                
         //ToJson
-       $data = json_encode($data);
+     //  $data = json_encode($data);
 
-        $headers = [ "Content-Type:application/x-www-form-urlencoded"];
+        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
 
 
