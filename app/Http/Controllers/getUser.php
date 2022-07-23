@@ -58,11 +58,7 @@ class getUser extends Controller
 
         curl_setopt($curl_handle, CURLOPT_POST, true);
         curl_setopt($curl_handle, CURLOPT_URL, $api_url);
-        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code 
-        &code=$this->code
-        &redirect_uri=https://dev-ext-app.herokuapp.com/public/user
-         &client_id=1657292332
-         &client_secret=1b8433d37832199bf746a66e7d8a5a77" );
+        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/user&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77" );
         curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
     //    dd($curl_handle);
