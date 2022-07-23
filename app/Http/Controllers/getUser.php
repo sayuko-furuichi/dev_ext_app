@@ -25,7 +25,7 @@ class getUser extends Controller
 
         //chanell ID
         $chaId="1657292332";
-        $authUrl .= ("&=client_id=" .  $chaId);
+        $authUrl .= ("&client_id=" .  $chaId);
 
 
         return redirect ($authUrl);
