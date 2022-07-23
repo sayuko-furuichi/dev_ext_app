@@ -52,7 +52,7 @@ class getUser extends Controller
         //  $data = json_encode($data);
 
         //エンコードされたURLで通信する
-        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
+        $headers =  "Content-Type:application/x-www-form-urlencoded";
 
         $curl_handle = curl_init();
 
@@ -65,7 +65,7 @@ class getUser extends Controller
          &client_secret=1b8433d37832199bf746a66e7d8a5a77" );
         curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
-        dd($curl_handle);
+    //    dd($curl_handle);
         //実行
         $json_response = curl_exec($curl_handle);
 
