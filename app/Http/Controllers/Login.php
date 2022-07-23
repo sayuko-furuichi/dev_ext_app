@@ -64,6 +64,7 @@ class Login extends Controller
         //デコード
         $decoded_data = json_decode($json_response, true);
        
+        dd( $decoded_data);
         //アクセス
         $access_token = $decoded_data->access_token;
 
