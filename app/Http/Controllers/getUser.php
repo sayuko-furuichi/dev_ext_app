@@ -18,51 +18,52 @@ class getUser extends Controller
         if ($this->state ==$request -> state) {
             //得たcodeで、アクセストークンを取得する
 
-            $this->code= $request->code;
-            $this->encUrl;
-
-            $api_url ='https://api.line.me/oauth2/v2.1/token';
-
-            $data = [
-"grant_type" => "authorization_code" ,
- "code"=>$this->code,
- "redirect_uri"=>"$this->encUrl",
- "client_id"=>"1657292332",
-  "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77",
-];
-
-            //ToJson
-            $data = json_encode($data);
-            $headers = [ "Content-Type:application/x-www-form-urlencoded"];
-
-
-
-            $curl_handle = curl_init();
-
-            curl_setopt($curl_handle, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($curl_handle, CURLOPT_URL, $api_url);
-            curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
-
-            //実行
-            $json_response = curl_exec($curl_handle);
-
-
-            //close
-            curl_close($curl_handle);
-
-            //デコード
-            $decoded_data = json_decode($json_response, true);
-
-            //アクセス
-            $access_token = $decoded_data->access_token;
-            $id_token = $decoded_data->id_token;
-
-            echo ($id_token);
 
             return view('getUser');
         }
+        
+        $this->code= $request->code;
+        $this->encUrl;
+
+        $api_url ='https://api.line.me/oauth2/v2.1/token';
+
+        $data = [
+        "grant_type" => "authorization_code" ,
+        "code"=>$this->code,
+        "redirect_uri"=>"$this->encUrl",
+        "client_id"=>"1657292332",
+        "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77",
+                ];
+
+        //ToJson
+        $data = json_encode($data);
+        $headers = [ "Content-Type:application/x-www-form-urlencoded"];
+
+
+
+        $curl_handle = curl_init();
+
+        curl_setopt($curl_handle, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($curl_handle, CURLOPT_URL, $api_url);
+        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
+
+        //実行
+        $json_response = curl_exec($curl_handle);
+
+
+        //close
+        curl_close($curl_handle);
+
+        //デコード
+        $decoded_data = json_decode($json_response, true);
+
+        //アクセス
+        $access_token = $decoded_data->access_token;
+        $id_token = $decoded_data->id_token;
+
+        echo($id_token);
         
         return view('getUser');
     }
