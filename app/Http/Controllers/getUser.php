@@ -26,16 +26,28 @@ class getUser extends Controller
         
         $this->code= $request->code;
 
-        $api_url ='https://api.line.me/oauth2/v2.1/token?';
+        $api_url ='https://api.line.me/oauth2/v2.1/token';
 
-        $data = [
+ 
+        $data = 
+        "grant_type=authorization_code 
+      &code=$this->code
+      &redirect_uri=https://dev-ext-app.herokuapp.com/public/user
+       &client_id=1657292332
+       &client_secret=1b8433d37832199bf746a66e7d8a5a77"
+               ;
+ 
+ 
+ 
+ 
+        /*   $data = [
             "grant_type=authorization_code" ,
             "code=".$this->code,
             "redirect_uri=https://dev-ext-app.herokuapp.com/public/user",
             "client_id=1657292332",
             "client_secret=1b8433d37832199bf746a66e7d8a5a77",
                     ];
-
+*/
         //ToJson
         //  $data = json_encode($data);
 
