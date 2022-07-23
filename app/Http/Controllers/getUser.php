@@ -28,48 +28,19 @@ class getUser extends Controller
 
         $api_url ='https://api.line.me/oauth2/v2.1/token';
 
-        $url='https://api.line.me/oauth2/v2.1/token';
-
-
-
         $data = [
             "grant_type" => "authorization_code" ,
             "code"=>$this->code,
-            "redirect_uri"=>urlencode("https://dev-ext-app.herokuapp.com/public/user"),
+            "redirect_uri"=>"https://dev-ext-app.herokuapp.com/public/user",
             "client_id"=>"1657292332",
             "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77",
                     ];
 
-
-        $client = new \GuzzleHttp\Client();
-$response = $client->request(
-    'POST',
-    $url, // URLを設定
-    [ "grant_type" => "authorization_code" ,
-    "code"=>$this->code,
-    "redirect_uri"=>"https://dev-ext-app.herokuapp.com/public/user",
-    "client_id"=>"1657292332",
-    "client_secret"=>"1b8433d37832199bf746a66e7d8a5a77", ]// パラメーターがあれば設定
-);
-echo $response->getStatusCode(); // 200
-echo $response->getReasonPhrase(); // OK
-echo $response->getProtocolVersion(); // 1.1
-// レスポンスボディを取得
-$responseBody = $response->getBody()->getContents();
-
-dd($responseBody);
-
-
-
-
-   /*            
         //ToJson
      //  $data = json_encode($data);
 
      //エンコードされたURLで通信する
         $headers = [ "Content-Type:application/x-www-form-urlencoded",];
-
-
 
         $curl_handle = curl_init();
 
@@ -95,7 +66,7 @@ dd($responseBody);
         $id_token = $decoded_data->id_token;
 
         echo($id_token);
-*/
+
         return view('getUser');
     }
 
