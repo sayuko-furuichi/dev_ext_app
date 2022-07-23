@@ -9,61 +9,10 @@ use GuzzleHttp\Client;
 
 class getUser extends Controller
 {
-    private $state;
-    private $code;
-    private $encUrl;
 
-    public function index(Request $request)
+
+    public function index()
     {
-        //ログインに成功してredirectされた場合
-        if ($this->state ==$request -> state) {
-            //得たcodeで、アクセストークンを取得する
-            //クエリ付けて、POSTしてくれってことか！
-
-
-            return view('getUser');
-        }
-        
-        $this->code= $request->code;
-
-        $api_url ='https://api.line.me/oauth2/v2.1/token';
-
-        //エンコードされたURLで通信する
-        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
-
-        $curl_handle = curl_init();
-
-        curl_setopt($curl_handle, CURLOPT_POST, true);
-        curl_setopt($curl_handle, CURLOPT_URL, $api_url);
-        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/user&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77" );
-        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
-                // curl_exec()の結果を文字列にする
-        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
-        
-
-        //実行
-        $json_response = curl_exec($curl_handle);
-
-        //close
-        curl_close($curl_handle);
-
-        //デコード
-        $decoded_data = json_decode($json_response, true);
-       
-        dd( $decoded_data);
-        //アクセス
-        $access_token = $decoded_data->access_token;
-        $id_token = $decoded_data->id_token;
-
-        echo($id_token);
-
-        // $api_url .= "grant_type=authorization_code";
-        // $api_url .= 
-
-
-
-
-
 
 
         return view('getUser');
@@ -78,32 +27,7 @@ class getUser extends Controller
      *
      * @return redirect Response
      */
-    public function login()
-    {
-        //認可URL生成
-        $authUrl = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&";
-
-        $cbUrl="https://dev-ext-app.herokuapp.com/public/user";
-    
-        $this->encUrl= urlencode($cbUrl);
-        $authUrl .= ("redirect_uri=" . $this->encUrl);
-        //文字列生成
-        $this->state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
-        //  $authUrl .= ("&state=" . $this->state);
-        
-        //scope profileにしてるよ！
-        $scope ="profile";
-        $authUrl .= ("&scope=" . $scope);
-
-        //chanell ID
-        $chaId="1657292332";
-        $authUrl .= ("&client_id=" .  $chaId);
-
-
-        return redirect($authUrl .= ("&state=" . $this->state));
-    }
-
-
+  
 
 
     public function getUser(Request $request)

@@ -21,11 +21,11 @@ Route::get('/', function () {
 
 //Route::get('/','App\Http\Controllers\HomeController@index');
 
-//Auth
-Route::get('/user/login','App\Http\Controllers\getUser@login')
+//login入口
+Route::get('/login','App\Http\Controllers\Login@login')
 ->name('login.index');
-Route::post('/login','App\Http\Controllers\Logins@input')
-->name('login.in');
+//callback
+Route::get('/callback','App\Http\Controllers\Login@callback');
 
 
 //get user data
