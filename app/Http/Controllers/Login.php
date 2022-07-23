@@ -67,7 +67,7 @@ class Login extends Controller
         $decoded_data = json_decode($json_response, true);
 
         //アクセス
-        dd($decoded_data['access_token']);
+      //  dd($decoded_data['access_token']);
        
         //DBに格納
         $logUser =new LoginUser;
@@ -102,7 +102,6 @@ class Login extends Controller
 
         curl_setopt($curl_handle, CURLOPT_HTTPGET, true);
         curl_setopt($curl_handle, CURLOPT_URL, $api_url);
-        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/callback&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77" );
         curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
                 // curl_exec()の結果を文字列にする
         curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
