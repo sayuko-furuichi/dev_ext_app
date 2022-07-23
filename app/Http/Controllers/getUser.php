@@ -58,6 +58,7 @@ class getUser extends Controller
 
         //デコード
         $decoded_data = json_decode($json_response, true);
+        dd();
 
         //アクセス
         $access_token = $decoded_data->access_token;
