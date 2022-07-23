@@ -61,13 +61,11 @@ class Login extends Controller
         //close
         curl_close($curl_handle);
 
-        $access_token = $json_response->access_token;
-
         //デコード
         $decoded_data = json_decode($json_response, true);
        
         //アクセス
-      //  $access_token = $decoded_data->access_token;
+        $access_token = $decoded_data->access_token;
 
 
         return view('getUser');
