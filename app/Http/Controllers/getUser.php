@@ -10,7 +10,21 @@ class getUser extends Controller
 {
     public function index()
     {
-        return view('getUser');
+    $authUrl = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&";
+
+        $cbUrl="https://dev-ext-app.herokuapp.com/public/user";
+        
+        $encUrl= urlencode($cbUrl);
+        $authUrl += ("redirect_uri" + $enURL);
+        //文字列生成
+        $state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
+        $authUrl += ("&stale=" + $state);
+        $scope ="profile";
+        $authUrl += ("&scope=" + $scope);
+
+
+
+        return redirect ($authUrl);
     }
 
 

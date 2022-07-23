@@ -21,6 +21,13 @@ Route::get('/', function () {
 
 //Route::get('/','App\Http\Controllers\HomeController@index');
 
+//Auth
+Route::get('/login','App\Http\Controllers\Logins@index')
+->name('login.index');
+Route::post('/login','App\Http\Controllers\Logins@input')
+->name('login.in');
+
+
 //get user data
 Route::get('/user','App\Http\Controllers\getUser@index')
 ->name('getuser.index');
