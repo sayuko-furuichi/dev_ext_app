@@ -18,6 +18,7 @@ class getUser extends Controller
         //ログインに成功してredirectされた場合
         if ($this->state ==$request -> state) {
             //得たcodeで、アクセストークンを取得する
+            //クエリ付けて、POSTしてくれってことか！
 
 
             return view('getUser');

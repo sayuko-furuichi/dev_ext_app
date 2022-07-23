@@ -3,7 +3,7 @@
         Options -MultiViews -Indexes
     </IfModule>
     # url encode
-    RewriteRule ^(.*)/$ /$1 [L,NE,R=301] 
+    # RewriteRule ^(.*)/$ /$1 [L,NE,R=301] 
     RewriteEngine On
 
     # Handle Authorization Header
