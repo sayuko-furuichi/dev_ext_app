@@ -19,9 +19,13 @@ class getUser extends Controller
         //文字列生成
         $state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
         $authUrl .= ("&stale=" . $state);
+        //scope profileにしてるよ！
         $scope ="profile";
         $authUrl .= ("&scope=" . $scope);
 
+        //chanell ID
+        $chaId="1657292332";
+        $authUrl .= ("&=client_id" .  $chaId);
 
 
         return redirect ($authUrl);
