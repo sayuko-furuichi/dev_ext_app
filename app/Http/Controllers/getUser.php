@@ -37,7 +37,7 @@ class getUser extends Controller
         $authUrl .= ("redirect_uri=" . $encUrl);
         //文字列生成
         $this->state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
-        $authUrl .= ("&stale=" . $this->state);
+      //  $authUrl .= ("&stale=" . $this->state);
         //scope profileにしてるよ！
         $scope ="profile";
         $authUrl .= ("&scope=" . $scope);
@@ -47,7 +47,7 @@ class getUser extends Controller
         $authUrl .= ("&client_id=" .  $chaId);
 
 
-        return redirect($authUrl);
+        return redirect($authUrl .=  $this->state);
     }
 
 
