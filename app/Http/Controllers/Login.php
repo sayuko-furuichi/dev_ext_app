@@ -67,17 +67,17 @@ class Login extends Controller
         $decoded_data = json_decode($json_response, true);
 
         //アクセス
-        $ac =$decoded_data['access_token'];
+       
         //DBに格納
         $logUser =new LoginUser;
-        $loguser->access_token = $ac;
+        $loguser->access_token =  $decoded_data['access_token'];
         $loguser->refresh_token = $decoded_data['refresh_token'];
         $loguser->scope = $decoded_data['scope'];
         $loguser->line_user_id = "";
 
         $logUser ->save();
 
-       // getProfile();
+       // getProfile($access_token);
   
 
 
@@ -85,7 +85,32 @@ class Login extends Controller
     }
 
 
-    public function getProfile(){
+    public function getProfile($access_token){
+
+        $api_url ='https://api.line.me/v2/profile';
+
+        //エンコードされたURLで通信する
+        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
+
+        $curl_handle = curl_init();
+
+        curl_setopt($curl_handle, CURLOPT_POST, true);
+        curl_setopt($curl_handle, CURLOPT_URL, $api_url);
+        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/callback&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77" );
+        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+                // curl_exec()の結果を文字列にする
+        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
+        
+
+        //実行
+        $json_response = curl_exec($curl_handle);
+
+        //close
+        curl_close($curl_handle);
+
+        //デコード
+        $decoded_data = json_decode($json_response, true);
+
 
         return;
 
