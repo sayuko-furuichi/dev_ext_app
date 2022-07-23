@@ -52,7 +52,7 @@ class getUser extends Controller
         //  $data = json_encode($data);
 
         //エンコードされたURLで通信する
-        $headers =  "Content-Type:application/x-www-form-urlencoded";
+        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
         $curl_handle = curl_init();
 
