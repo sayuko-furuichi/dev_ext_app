@@ -15,7 +15,7 @@ class getUser extends Controller
         $cbUrl="https://dev-ext-app.herokuapp.com/public/user";
         
         $encUrl= urlencode($cbUrl);
-        $authUrl += ("redirect_uri=" + $encURL);
+        $authUrl += ("redirect_uri=" + $encUrl);
         //文字列生成
         $state =  substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8);
         $authUrl += ("&stale=" + $state);
