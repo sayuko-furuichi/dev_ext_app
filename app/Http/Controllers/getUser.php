@@ -12,12 +12,14 @@ class getUser extends Controller
   
     public function index(Request $request)
     {
+        //ログインに成功してredirectされた場合
         if(isset($request)){
+            
 
             return view('getUser');
 }else{
 
-
+    //TODO:ログインが出来なかったときのエラー処理
 
     $authUrl = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&";
 
