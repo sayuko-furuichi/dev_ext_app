@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\LoginUser;
+use App\Models\UserProf;
 use Illuminate\Support\Facades\DB;
 
 class Login extends Controller
@@ -68,8 +69,9 @@ class Login extends Controller
 
         //アクセス
       //  dd($decoded_data['access_token']);
-       
-        //DBに格納
+       $access_token="eyJhbGciOiJIUzI1NiJ9.8UfdPW_1j1pNobRJMei71J_7SwIv2GYqOUzKxYm5v9pgCIrIaCS81LHoPoy62iaRsAJHNrDFK-OfTSnR-YVn_z_KJNey1VGtVgec_2ZOTjrNyq-D-oHhk2TTpNmLTru-I65nzwXXnM-Anuekh6wV7Haa0NpmYUMwLfS_yt7YwN0.fYUbi8GRoLpSNG9nIFst3iKJHb_CLBbu9CW_VNphR74";
+     /*
+      //DBに格納
         $logUser =new LoginUser;
         $loguser->access_token =  $decoded_data['access_token'];
         $loguser->refresh_token = $decoded_data['refresh_token'];
@@ -77,8 +79,8 @@ class Login extends Controller
         $loguser->line_user_id = "";
 
         $logUser ->save();
-
-       // getProfile($access_token);
+*/
+        getProf($access_token);
   
 
 
@@ -91,7 +93,7 @@ class Login extends Controller
  * @param [type] $access_token
  * @return UserProf
  */
-    public function getProfile($access_token){
+    public function getProf($access_token){
 
         $api_url ='https://api.line.me/v2/profile';
 
@@ -115,6 +117,8 @@ class Login extends Controller
 
         //デコード
         $decoded_data = json_decode($json_response, true);
+
+       dd($decoded_data['userId']);
 
 
         return;
