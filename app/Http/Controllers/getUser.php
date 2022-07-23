@@ -19,14 +19,6 @@ class getUser extends Controller
     }
 
     //TODO:ログインが出来なかったときのエラー処理
-
-   
-
-    /**
-     *  function login :認可URLを生成してプロフィール表示画面へredirect
-     *
-     * @return redirect Response
-     */
   
 
 
