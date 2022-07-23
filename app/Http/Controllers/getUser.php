@@ -47,13 +47,13 @@ class getUser extends Controller
         curl_setopt($curl_handle, CURLOPT_POST, true);
         curl_setopt($curl_handle, CURLOPT_URL, $api_url);
         curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data);
-       // curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+       curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); // curl_exec()の結果を文字列にする
-
+                    dd($curl_handle);
         //実行
         $json_response = curl_exec($curl_handle);
 
-                dd( $json_response);
+                dd($json_response);
         //close
         curl_close($curl_handle);
 

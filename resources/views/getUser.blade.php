@@ -51,9 +51,7 @@
                 <font color="green">動作環境</font>
                 <p> 起動しているOS： <span id="osField"> </span> </p>
                 <p> 起動された画面： <span id="contextField"> </span> </p>
-                {{--  公式アカウントと友達か  --}}
-                {{--  <p> 起動された画面： <span id="friendField"> </span> </p>  --}}
-                {{--  ifで、この値なら、***ですの解説  --}}
+
 
                 <form method="POST" name="fm">
                     @csrf
