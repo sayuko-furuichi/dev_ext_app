@@ -92,7 +92,7 @@ if ($logdData != null && isset($request) && $logdData != 'undifine') {
 
     $up=$this->getProf($at);
 
-    return redirect('/user', [
+    return view('getUser', [
         'users' =>$up,
     ]);
 
