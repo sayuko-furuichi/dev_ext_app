@@ -48,6 +48,7 @@ class Login extends Controller
 
     $this->code= $request->code;
 
+
     $api_url ='https://api.line.me/oauth2/v2.1/token';
 
     //エンコードされたURLで通信する
@@ -76,7 +77,7 @@ class Login extends Controller
     //  dd($decoded_data['access_token']);
 
    
-    try {
+
     //DBに格納
     $logUser =new LoginUser;
     $at=$logdData['access_token'];
@@ -94,10 +95,6 @@ class Login extends Controller
     return view('getUser', [
         'users' =>$up,
     ]);
-}catch(ErrorException){
-
-  return session()->flash('flash_message', '取得に失敗しました');
-}
 
 
         //  return view('getUser');
