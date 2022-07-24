@@ -29,7 +29,7 @@ Route::get('/callback','App\Http\Controllers\Login@callback');
 
 
 //get user data
-Route::get('/user','App\Http\Controllers\getUser@index')
+Route::get('/user/{users}','App\Http\Controllers\getUser@index')
 ->name('getuser.index');
 //get user data POST
 Route::post('/user','App\Http\Controllers\getUser@getUser')
