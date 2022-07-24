@@ -155,10 +155,8 @@ class Login extends Controller
         ->orderBy('created_at','DESC')
         ->limit(1)
         ->get();
-
-       $this->logU->line_user_id=$decoded_data['userId'];
   
-       $this->logU->save();
+       $this->logU->line_user_id->fill($decoded_data['userId'])->save();
 
 
         return;
