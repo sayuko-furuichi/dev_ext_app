@@ -80,17 +80,17 @@ class Login extends Controller
         var_dump($logdData);
       //DBに格納
           $logUser =new LoginUser;
-         $loguser->access_token=$logdData['access_token'];
-         $loguser->refresh_token=$logdData['refresh_token'];
-         $loguser->scope=$logdData['scope'];
-         $loguser->line_user_id= "";
+         $logUser->access_token=$logdData['access_token'];
+         $logUser->refresh_token=$logdData['refresh_token'];
+         $logUser->scope=$logdData['scope'];
+         $logUser->line_user_id= "";
          
-         $loguser->expires_in =$logdData['expires_in'];
+         $logUser->expires_in =$logdData['expires_in'];
 
 
          $logUser ->save();
 
-        $up=$this->getProf($access_token);
+        $up=$this->getProf($at);
         
         
         return view('getUser', [
@@ -106,12 +106,12 @@ class Login extends Controller
      * @param [type] $access_token
      * @return view
      */
-    public function getProf($access_token)
+    public function getProf($at)
     {
         $api_url ='https://api.line.me/v2/profile';
 
         //GETでリクエストする。
-        $headers = [ "Authorization:Bearer $access_token",];
+        $headers = [ "Authorization:Bearer $at",];
 
         $curl_handle = curl_init();
 
