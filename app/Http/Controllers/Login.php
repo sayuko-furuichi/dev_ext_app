@@ -15,7 +15,7 @@ class Login extends Controller
     private $encUrl;
 
     // private LoginUser $logU; 
-    private LoginUser $logU; 
+    private $logU; 
 
     public function login()
     {
