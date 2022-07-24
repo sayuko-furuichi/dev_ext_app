@@ -41,7 +41,9 @@
         <div id="profileInfo">
             <p>プロフィール画像：</p>
             <div id="profilePictureDiv" class="profile-picture">
+                @if($users->prof_img_url != "" && $users->prof_img_url != "undefine")
                 <img src={{$users->prof_img_url}} width="30%" alt="prof_img">
+                @endif
             </div>
             <div class="profile-info">
                 {{--  <p>LINEユーザ名： <span id="displayNameField"> </span></p>  --}}
