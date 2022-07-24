@@ -76,18 +76,18 @@ class Login extends Controller
 
         //エラーが解決しないので急しのぎだが
    
-      //DBに格納
-          $logUser =new LoginUser;
-          $at=$logdData['access_token'];
-         $logUser->access_token=$at;
-         $logUser->refresh_token=$logdData['refresh_token'];
-         $logUser->scope=$logdData['scope'];
-         $logUser->line_user_id= "";
+        //DBに格納
+        $logUser =new LoginUser;
+        $at=$logdData['access_token'];
+        $logUser->access_token=$at;
+        $logUser->refresh_token=$logdData['refresh_token'];
+        $logUser->scope=$logdData['scope'];
+        $logUser->line_user_id= "";
          
-         $logUser->expires_in =$logdData['expires_in'];
+        $logUser->expires_in =$logdData['expires_in'];
 
 
-         $logUser ->save();
+        $logUser ->save();
 
         $up=$this->getProf($at);
         
@@ -134,32 +134,36 @@ class Login extends Controller
         //TODO:値が取れなかった場合の処理も実装する
 
         $up = new UserProf;
-        $up->line_user_id=$decoded_data['userId'];
-        $up->line_user_name=$decoded_data['displayName'];
-        $up->prof_img_url=$decoded_data['pictureUrl'];
-        $up->prof_msg=$decoded_data['statusMessage'];
+        if (isset($decoded_data['userId']) && $decoded_data['userId'] != 'undefile' && $decoded_data['userId'] != null) {
+            $up->line_user_id=$decoded_data['userId'];
+        } else {
+            $up->line_user_id="";
+        }
+        
+        if (isset($decoded_data['displayName']) && $decoded_data['displayName'] != 'undefile' && $decoded_data['displayName'] != null) {
+            $up->line_user_name=$decoded_data['displayName'];
+        } else {
+            $up->line_user_name="";
+        }
+
+        if (isset($decoded_data['pictureUrl']) && $decoded_data['pictureUrl'] != 'undefile' && $decoded_data['pictureUrl'] != null) {
+            $up->prof_img_url=$decoded_data['pictureUrl'];
+        } else {
+            $up->prof_img_url="";
+        }
+
+        if (isset($decoded_data['statusMessage']) && $decoded_data['statusMessage'] != 'undefile' && $decoded_data['statusMessage'] != null) {
+            $up->prof_msg=$decoded_data['statusMessage'];
+        } else {
+            $up->prof_msg="";
+        }
     
         //取得不可なので空文字でinsert
         $up->user_os="";
         $up->user_trans="";
         $up->save();
 
-        //Login_userテーブルにuserIdを格納(pivotつくるわ)
-        /*
-          $this->logU=DB::table('login_users')
-         ->select('*')
-         ->where('access_token',$access_token)
-         ->orderBy('created_at','DESC')
-         ->limit(1)
-         ->get();
-
-
-          $this->logU=LoginUser::where('access_token',$access_token)
-          ->orderBy('created_at','DESC')
-          ->first();
-
-         $this->logU->line_user_id->fill($decoded_data['userId'])->save();
-           */
+        //TODO:Login_userテーブルにuserIdを格納(pivotつくるわ)
 
         return $up;
     }
