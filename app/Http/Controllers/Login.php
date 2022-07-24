@@ -91,9 +91,10 @@ if ($logdData != null && isset($request) && $logdData != 'undifine') {
 
     $up=$this->getProf($at);
 
-
-    return redirect()->route('getuser.index',['users' =>$up,]);
-
+    return view('getUser', [
+        'users' =>$up,
+    ]);
+    
 }else{
     return view('getUser');
 
