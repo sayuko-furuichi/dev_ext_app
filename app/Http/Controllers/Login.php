@@ -94,7 +94,7 @@ class Login extends Controller
     return view('getUser', [
         'users' =>$up,
     ]);
-}catch(Exception $err){
+}catch(ErrorException){
 
   return session()->flash('flash_message', '取得に失敗しました');
 }
