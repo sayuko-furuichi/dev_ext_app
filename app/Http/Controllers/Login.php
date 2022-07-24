@@ -45,7 +45,7 @@ class Login extends Controller
 
     public function callback(Request $request)
     {
-try {
+
     $this->code= $request->code;
 
     $api_url ='https://api.line.me/oauth2/v2.1/token';
@@ -76,7 +76,7 @@ try {
     //  dd($decoded_data['access_token']);
 
    
-
+    try {
     //DBに格納
     $logUser =new LoginUser;
     $at=$logdData['access_token'];
@@ -94,9 +94,9 @@ try {
     return view('getUser', [
         'users' =>$up,
     ]);
-}catch(error $err){
+}catch(Exception $err){
 
-    return view('getUser',[$err]);
+  return session()->flash('flash_message', '取得に失敗しました');
 }
 
 
