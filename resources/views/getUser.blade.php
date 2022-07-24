@@ -36,7 +36,9 @@
 
         <div class="note"></div>
         <h2>あなたのプロフィール</h2>
-
+        @if (isset($err))
+            <p>{{$err}}</p>
+        @endif
         @if(isset($users))
         <div id="profileInfo">
             <p>プロフィール画像：</p>

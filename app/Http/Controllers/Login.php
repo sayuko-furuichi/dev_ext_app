@@ -94,9 +94,9 @@ try {
     return view('getUser', [
         'users' =>$up,
     ]);
-}catch(error){
+}catch(error $err){
 
-    return redirect('getUser')->with('result','error');
+    return view('getUser',[$err]);
 }
 
 
