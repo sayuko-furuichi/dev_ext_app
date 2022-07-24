@@ -14,6 +14,8 @@ class Login extends Controller
     private $code;
     private $encUrl;
 
+    private LoginUser $logU; 
+
     public function login()
     {
         //認可URL生成
@@ -94,12 +96,14 @@ class Login extends Controller
     }
 
 /**
- *  function getProfile
+ *  function getProfile:アクセストークンからユーザのプロフィールを取得
  *
  * @param [type] $access_token
- * @return UserProf
+ * @return view
  */
     public function getProf($access_token){
+
+
 
         $api_url ='https://api.line.me/v2/profile';
 
@@ -124,6 +128,7 @@ class Login extends Controller
         //デコード
         $decoded_data = json_decode($json_response, true);
        
+        //取得したプロフィールを保存
        $up = new UserProf;
        $up->line_user_id=$decoded_data['userId'];
        $up->line_user_name=$decoded_data['displayName'];
@@ -135,9 +140,17 @@ class Login extends Controller
      $up->user_trans="";
        $up->save();
 
-       $logU=LoginUser::where('access_token',$access_token);
-       $logU->line_user_id=$decoded_data['userId'];
-       $logU->save();
+        //Login_userテーブルにuserIdを格納(リレーション付けて引っ張ってきても良いかも？)
+       $this->logU=DB::table('login_users')
+       ->select('*')
+       ->where('access_token',$access_token)
+       ->orderBy('created_at','DESC')
+       ->limit(1)
+       ->get();
+
+       $this->logU->line_user_id=$decoded_data['userId'];
+  
+       $this->logU->save();
 
 
         return;
