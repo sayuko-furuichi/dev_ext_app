@@ -80,7 +80,7 @@ class Login extends Controller
         var_dump($logdData);
       //DBに格納
           $logUser =new LoginUser;
-         $loguser->access_token=array($logdData['access_token']);
+         $loguser->access_token=$logdData['access_token'];
          $loguser->refresh_token=$logdData['refresh_token'];
          $loguser->scope=$logdData['scope'];
          $loguser->line_user_id= "";
