@@ -75,9 +75,7 @@ class Login extends Controller
         //  dd($decoded_data['access_token']);
 
         //エラーが解決しないので急しのぎだが
-       // $access_token="eyJhbGciOiJIUzI1NiJ9.8UfdPW_1j1pNobRJMei71J_7SwIv2GYqOUzKxYm5v9pgCIrIaCS81LHoPoy62iaRsAJHNrDFK-OfTSnR-YVn_z_KJNey1VGtVgec_2ZOTjrNyq-D-oHhk2TTpNmLTru-I65nzwXXnM-Anuekh6wV7Haa0NpmYUMwLfS_yt7YwN0.fYUbi8GRoLpSNG9nIFst3iKJHb_CLBbu9CW_VNphR74";
    
-        var_dump($logdData);
       //DBに格納
           $logUser =new LoginUser;
           $at=$logdData['access_token'];
@@ -132,6 +130,8 @@ class Login extends Controller
         //デコード
         $decoded_data = json_decode($json_response, true);
        
+        var_dump($decoded_data);
+
         //取得したプロフィールを保存
         //TODO:値が取れなかった場合の処理も実装する
 
