@@ -75,9 +75,8 @@ class Login extends Controller
         //  dd($decoded_data['access_token']);
 
    
-if ($logdData != null && isset($logdData) && $logdData != 'undifine') {
+if ($logdData[0] != null && isset($logdData[0]) && $logdData != 'undifine') {
 
-       
     //DBに格納
     $logUser =new LoginUser;
     $at=$logdData['access_token'];
