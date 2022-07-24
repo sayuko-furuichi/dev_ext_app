@@ -74,27 +74,35 @@ class Login extends Controller
         //アクセス
         //  dd($decoded_data['access_token']);
 
-        //エラーが解決しないので急しのぎだが
    
-        //DBに格納
-        $logUser =new LoginUser;
-        $at=$logdData['access_token'];
-        $logUser->access_token=$at;
-        $logUser->refresh_token=$logdData['refresh_token'];
-        $logUser->scope=$logdData['scope'];
-        $logUser->line_user_id= "";
+if ($logdData != null && isset($logdData) && $logdData != 'undifine') {
+
+       
+    //DBに格納
+    $logUser =new LoginUser;
+    $at=$logdData['access_token'];
+    $logUser->access_token=$at;
+    $logUser->refresh_token=$logdData['refresh_token'];
+    $logUser->scope=$logdData['scope'];
+    $logUser->line_user_id= "";
          
-        $logUser->expires_in =$logdData['expires_in'];
+    $logUser->expires_in =$logdData['expires_in'];
 
 
-        $logUser ->save();
+    $logUser ->save();
 
-        $up=$this->getProf($at);
+    $up=$this->getProf($at);
+
+    return view('getUser', [
+        'users' =>$up,
+    ]);
+
+}else{
+    return view('getUser');
+
+}
         
-        
-        return view('getUser', [
-            'users' =>$up,
-        ]);
+    
 
         //  return view('getUser');
     }
