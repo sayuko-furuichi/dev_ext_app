@@ -77,13 +77,14 @@ class Login extends Controller
         //エラーが解決しないので急しのぎだが
         $access_token="eyJhbGciOiJIUzI1NiJ9.8UfdPW_1j1pNobRJMei71J_7SwIv2GYqOUzKxYm5v9pgCIrIaCS81LHoPoy62iaRsAJHNrDFK-OfTSnR-YVn_z_KJNey1VGtVgec_2ZOTjrNyq-D-oHhk2TTpNmLTru-I65nzwXXnM-Anuekh6wV7Haa0NpmYUMwLfS_yt7YwN0.fYUbi8GRoLpSNG9nIFst3iKJHb_CLBbu9CW_VNphR74";
    
-      
+        dd($logdData['expires_in']);
       //DBに格納
           $logUser =new LoginUser;
          $loguser->access_token =$logdData['access_token'];
          $loguser->refresh_token =$logdData['refresh_token'];
          $loguser->scope =$logdData['scope'];
          $loguser->line_user_id = "";
+         
          $loguser->expires_in =$logdData['expires_in'];
 
 
@@ -132,6 +133,7 @@ class Login extends Controller
        
         //取得したプロフィールを保存
         //TODO:値が取れなかった場合の処理も実装する
+
         $up = new UserProf;
         $up->line_user_id=$decoded_data['userId'];
         $up->line_user_name=$decoded_data['displayName'];
