@@ -77,7 +77,7 @@ class Login extends Controller
         //エラーが解決しないので急しのぎだが
         $access_token="eyJhbGciOiJIUzI1NiJ9.8UfdPW_1j1pNobRJMei71J_7SwIv2GYqOUzKxYm5v9pgCIrIaCS81LHoPoy62iaRsAJHNrDFK-OfTSnR-YVn_z_KJNey1VGtVgec_2ZOTjrNyq-D-oHhk2TTpNmLTru-I65nzwXXnM-Anuekh6wV7Haa0NpmYUMwLfS_yt7YwN0.fYUbi8GRoLpSNG9nIFst3iKJHb_CLBbu9CW_VNphR74";
    
-        dd($logdData['expires_in']);
+        var_dump($logdData);
       //DBに格納
           $logUser =new LoginUser;
          $loguser->access_token =$logdData['access_token'];
