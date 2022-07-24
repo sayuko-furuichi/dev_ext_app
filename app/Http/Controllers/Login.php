@@ -141,7 +141,7 @@ class Login extends Controller
      $up->user_trans="";
        $up->save();
 
-        //Login_userテーブルにuserIdを格納(リレーション付けて引っ張ってきても良いかも？)
+        //Login_userテーブルにuserIdを格納(pivotつくるわ)
       /*
         $this->logU=DB::table('login_users')
        ->select('*')
@@ -150,14 +150,13 @@ class Login extends Controller
        ->limit(1)
        ->get();
 
-        */
+       
         $this->logU=LoginUser::where('access_token',$access_token)
         ->orderBy('created_at','DESC')
-        ->limit(1)
-        ->get();
+        ->first();
   
        $this->logU->line_user_id->fill($decoded_data['userId'])->save();
-
+         */
 
         return;
 
