@@ -93,7 +93,7 @@ class Login extends Controller
   
 
 
-        return view('getUser');
+      //  return view('getUser');
     }
 
 /**
@@ -158,7 +158,9 @@ class Login extends Controller
        $this->logU->line_user_id->fill($decoded_data['userId'])->save();
          */
 
-        return;
+        return view('getUser',[
+            'users' =>$up,
+        ]);
 
 
 

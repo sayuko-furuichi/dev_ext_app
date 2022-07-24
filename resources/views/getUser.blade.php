@@ -37,35 +37,47 @@
         <div class="note"></div>
         <h2>あなたのプロフィール</h2>
 
+        @if(isset($users))
+        @foreach ($users as $us)
+            
+      
         <div id="profileInfo">
             <p>プロフィール画像：</p>
-            <div id="profilePictureDiv" class="profile-picture"></div>
+            <div id="profilePictureDiv" class="profile-picture">
+                <img src="{{$us->prof_img_url}}" width="30%">
+            </div>
             <div class="profile-info">
                 {{--  <p>LINEユーザ名： <span id="displayNameField"> </span></p>  --}}
-                <p>LINEユーザ名： <span id="displayNameField"> </span></p>
+                <p>LINEユーザ名： <span>{{$us->line_user_name}}</span></p>
 
-                <p>LINEユーザID： <span id="userIdProfileField"> </span></p>
-                <p>プロフィールメッセージ： <span id="statusMessageField"> </span> </p>
+                <p>LINEユーザID： <span> {{$us->line_user_id}}</span></p>
+                <p>プロフィールメッセージ： <span> {{$us->prof_msg}} </span> </p>
                 
                 {{-- 動作環境 --}}
-                <font color="green">動作環境</font>
+                <font color="green">動作環境 <span> <font color="red"> ※LINEログインAPIでは取得できません</font></span></font>
                 <p> 起動しているOS： <span id="osField"> </span> </p>
                 <p> 起動された画面： <span id="contextField"> </span> </p>
+                @endforeach
 
-
-                <form method="POST" name="fm">
+              
+          {{--  <form method="POST" name="fm">  
                     @csrf
                     <a href="{{route ('getuser.post',['nm'=>'nm','id'=>'id','msg'=>'msg','os'=>'os','con'=>'con','url'=>'url'])}}"></a>
                     <button type="submit">送信</button>
+
+                    --}}
                     
-{{--  POST用  --}}
+{{--  POST用  
                 <input type="hidden" id="displayNameps"  name="nm">
                 <input type="hidden" id="userIdProps" value="" name="id">
                 <input type="hidden" id="statusMessageps" value="" name="msg">
                 <input type="hidden" id="osps" value="" name="os">
                 <input type="hidden" id="conteps" value="" name="con">
                 <input type="hidden" id="urlps" value="" name="url">
+                --}}
                 {{--  prof画像のURL url  --}}
+
+               
 
             </div>
         </div>
