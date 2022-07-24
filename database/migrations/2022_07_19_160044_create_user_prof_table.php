@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('line_user_name');
             $table->string('prof_img_url');
             $table->string('prof_msg');
-            $table->string('user_os');
+        //    取得不可
+             $table->string('user_os');
             $table->string('user_trans');
             $table->timestamps();
         });

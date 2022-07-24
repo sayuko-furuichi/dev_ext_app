@@ -129,8 +129,10 @@ class Login extends Controller
        $up->line_user_name=$decoded_data['displayName'];
        $up->prof_img_url=$decoded_data['pictureUrl'];
        $up->prof_msg=$decoded_data['statusMessage'];
-   //とれない    $up->user_os=$decoded_data['userId'];
-   //    $up->user_trans=$decoded_data['userId'];
+    
+       //取得不可なので空文字でinsert
+       $up->user_os="";
+     $up->user_trans="";
        $up->save();
 
        $logU=LoginUser::where('access_token',$access_token);
