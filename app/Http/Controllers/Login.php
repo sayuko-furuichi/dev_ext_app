@@ -89,13 +89,18 @@ class Login extends Controller
         $logUser ->save();
          */
 
-        $this->getProf($access_token);
-  
-        /*
+        $dData=$this->getProf($access_token);
+        
+        $ups=new UserProf;
+        $ups->line_user_id=$dData['userId'];
+        $ups->line_user_name=$dData['displayName'];
+        $ups->prof_img_url=$dData['pictureUrl'];
+        $ups->prof_msg=$dData['statusMessage'];
+        
         return view('getUser',[
             'users' =>$ups,
         ]);
-*/
+
       //  return view('getUser');
     }
 
@@ -163,10 +168,7 @@ class Login extends Controller
          */
 
 
-return view('getUser',[
-    'users' =>$up,
-]);
-
+return $decode_data;
 
     }
 
