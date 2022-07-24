@@ -38,20 +38,17 @@
         <h2>あなたのプロフィール</h2>
 
         @if(isset($users))
-        @foreach ($users as $us)
-            
-      
         <div id="profileInfo">
             <p>プロフィール画像：</p>
             <div id="profilePictureDiv" class="profile-picture">
-                <img src={{$us->prof_img_url}} width="30%">
+                <img src={{$users->prof_img_url}} width="30%" alt="prof_img">
             </div>
             <div class="profile-info">
                 {{--  <p>LINEユーザ名： <span id="displayNameField"> </span></p>  --}}
-                <p>LINEユーザ名： <span>{{$us->line_user_name}}</span></p>
+                <p>LINEユーザ名： <span>{{$users->line_user_name}}</span></p>
 
-                <p>LINEユーザID： <span> {{$us->line_user_id}}</span></p>
-                <p>プロフィールメッセージ： <span> {{$us->prof_msg}} </span> </p>
+                <p>LINEユーザID： <span> {{$users->line_user_id}}</span></p>
+                <p>プロフィールメッセージ： <span> {{$users->prof_msg}} </span> </p>
                 
                 {{-- 動作環境 --}}
                 <font color="green">動作環境 <span> <font color="red"> ※LINEログインAPIでは取得できません</font></span></font>
