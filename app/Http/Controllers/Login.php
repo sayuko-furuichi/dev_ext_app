@@ -168,7 +168,7 @@ class Login extends Controller
          */
 
 
-return $decode_data;
+return $decoded_data;
 
     }
 
