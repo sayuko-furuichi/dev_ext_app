@@ -89,9 +89,11 @@ class Login extends Controller
         $logUser ->save();
          */
 
-        $this->getProf($access_token);
+        $ups= $this->getProf($access_token);
   
-
+        return view('getUser',[
+            'users' =>$ups,
+        ]);
 
       //  return view('getUser');
     }
@@ -159,10 +161,8 @@ class Login extends Controller
        $this->logU->line_user_id->fill($decoded_data['userId'])->save();
          */
 
-        return view('getUser',[
-            'users' =>$up,
-        ]);
 
+return $up;
 
 
     }
