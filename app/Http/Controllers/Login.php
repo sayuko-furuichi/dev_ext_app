@@ -14,6 +14,7 @@ class Login extends Controller
     private $code;
     private $encUrl;
 
+    // private LoginUser $logU; 
     private LoginUser $logU; 
 
     public function login()
@@ -141,12 +142,19 @@ class Login extends Controller
        $up->save();
 
         //Login_userテーブルにuserIdを格納(リレーション付けて引っ張ってきても良いかも？)
-       $this->logU=DB::table('login_users')
+      /*
+        $this->logU=DB::table('login_users')
        ->select('*')
        ->where('access_token',$access_token)
        ->orderBy('created_at','DESC')
        ->limit(1)
        ->get();
+
+        */
+        $this->logU=LoginUser::where('access_token',$access_token)
+        ->orderBy('created_at','DESC')
+        ->limit(1)
+        ->get();
 
        $this->logU->line_user_id=$decoded_data['userId'];
   
