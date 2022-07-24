@@ -45,37 +45,37 @@ class Login extends Controller
 
     public function callback(Request $request)
     {
-        $this->code= $request->code;
+try {
+    $this->code= $request->code;
 
-        $api_url ='https://api.line.me/oauth2/v2.1/token';
+    $api_url ='https://api.line.me/oauth2/v2.1/token';
 
-        //エンコードされたURLで通信する
-        $headers = [ "Content-Type:application/x-www-form-urlencoded",];
+    //エンコードされたURLで通信する
+    $headers = [ "Content-Type:application/x-www-form-urlencoded",];
 
-        $curl_handle = curl_init();
+    $curl_handle = curl_init();
 
-        curl_setopt($curl_handle, CURLOPT_POST, true);
-        curl_setopt($curl_handle, CURLOPT_URL, $api_url);
-        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/callback&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77");
-        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
-        // curl_exec()の結果を文字列にする
-        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl_handle, CURLOPT_POST, true);
+    curl_setopt($curl_handle, CURLOPT_URL, $api_url);
+    curl_setopt($curl_handle, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=$this->code&redirect_uri=https://dev-ext-app.herokuapp.com/public/callback&client_id=1657292332&client_secret=1b8433d37832199bf746a66e7d8a5a77");
+    curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+    // curl_exec()の結果を文字列にする
+    curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
         
 
-        //実行
-        $json_response = curl_exec($curl_handle);
+    //実行
+    $json_response = curl_exec($curl_handle);
 
-        //close
-        curl_close($curl_handle);
+    //close
+    curl_close($curl_handle);
 
-        //デコード
-        $logdData = json_decode($json_response, true);
+    //デコード
+    $logdData = json_decode($json_response, true);
 
-        //アクセス
-        //  dd($decoded_data['access_token']);
+    //アクセス
+    //  dd($decoded_data['access_token']);
 
    
-if ($logdData != null && isset($request) && $logdData != 'undifine') {
 
     //DBに格納
     $logUser =new LoginUser;
@@ -94,13 +94,11 @@ if ($logdData != null && isset($request) && $logdData != 'undifine') {
     return view('getUser', [
         'users' =>$up,
     ]);
-    
-}else{
-    return view('getUser');
+}catch(error){
 
+    return redirect('getUser')->with('result','error');
 }
-        
-    
+
 
         //  return view('getUser');
     }
