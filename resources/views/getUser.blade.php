@@ -44,7 +44,7 @@
         <div id="profileInfo">
             <p>プロフィール画像：</p>
             <div id="profilePictureDiv" class="profile-picture">
-                <img src="{{$us->prof_img_url}}" width="30%">
+                <img src={{$us->prof_img_url}} width="30%">
             </div>
             <div class="profile-info">
                 {{--  <p>LINEユーザ名： <span id="displayNameField"> </span></p>  --}}
