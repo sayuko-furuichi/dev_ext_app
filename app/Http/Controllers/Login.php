@@ -136,6 +136,7 @@ class Login extends Controller
 
         //デコード
         $decoded_data = json_decode($json_response, true);
+        $out=json_decode($json_response, true);
        
         //取得したプロフィールを保存
         //TODO:値が取れなかった場合の処理も実装する
@@ -168,7 +169,7 @@ class Login extends Controller
          */
 
 
-return $decoded_data;
+return $out;
 
     }
 
