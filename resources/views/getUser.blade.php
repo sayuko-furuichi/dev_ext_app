@@ -54,7 +54,7 @@
                 <font color="green">動作環境 <span> <font color="red"> ※LINEログインAPIでは取得できません</font></span></font>
                 <p> 起動しているOS： <span id="osField"> </span> </p>
                 <p> 起動された画面： <span id="contextField"> </span> </p>
-                @endforeach
+            
                 @endif
 
               
