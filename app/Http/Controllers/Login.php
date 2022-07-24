@@ -130,6 +130,7 @@ class Login extends Controller
         $decoded_data = json_decode($json_response, true);
        
         //取得したプロフィールを保存
+        //TODO:値が取れなかった場合の処理も実装する
        $up = new UserProf;
        $up->line_user_id=$decoded_data['userId'];
        $up->line_user_name=$decoded_data['displayName'];
