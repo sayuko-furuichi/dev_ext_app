@@ -76,6 +76,8 @@ class Login extends Controller
     //アクセス
     //  dd($decoded_data['access_token']);
 
+try {
+
    
 
     //DBに格納
@@ -93,9 +95,12 @@ class Login extends Controller
     $up=$this->getProf($at);
 
     return view('getUser', [
-        'users' =>$up,
+     'users' =>$up,
     ]);
+}catch(Exception $e){
+    return view('getUser');
 
+}
 
         //  return view('getUser');
     }
