@@ -81,9 +81,10 @@ class Login extends Controller
         $loguser->scope =$decoded_data['scope'];
         $loguser->line_user_id = "";
         $loguser->expires_in =$decoded_data['expires_in'];
-        */
+       
 
         $logUser ->save();
+         */
 
         $this->getProf($access_token);
   
