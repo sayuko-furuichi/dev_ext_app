@@ -120,7 +120,16 @@ class Login extends Controller
         //デコード
         $decoded_data = json_decode($json_response, true);
 
-       dd($decoded_data['userId']);
+    //   dd($decoded_data['userId']);
+       
+       $up = new UserProf;
+       $up->line_user_id=$decoded_data['userId'];
+       $up->line_user_name=$decoded_data['displayName'];
+       $up->prof_img_url=$decoded_data['pictureUrl'];
+       $up->prof_msg=$decoded_data['statusMessage'];
+   //とれない    $up->user_os=$decoded_data['userId'];
+   //    $up->user_trans=$decoded_data['userId'];
+       $up->save();
 
 
         return;
