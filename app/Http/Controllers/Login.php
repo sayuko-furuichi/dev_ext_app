@@ -130,8 +130,6 @@ class Login extends Controller
         //デコード
         $decoded_data = json_decode($json_response, true);
        
-        var_dump($decoded_data);
-
         //取得したプロフィールを保存
         //TODO:値が取れなかった場合の処理も実装する
 
