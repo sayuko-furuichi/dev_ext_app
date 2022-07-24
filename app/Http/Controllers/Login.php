@@ -79,6 +79,8 @@ class Login extends Controller
         $loguser->refresh_token = $decoded_data['refresh_token'];
         $loguser->scope = $decoded_data['scope'];
         $loguser->line_user_id = "";
+        $loguser->expires_in = $decoded_data['expires_in'];
+
 
         $logUser ->save();
 */
@@ -130,6 +132,10 @@ class Login extends Controller
    //とれない    $up->user_os=$decoded_data['userId'];
    //    $up->user_trans=$decoded_data['userId'];
        $up->save();
+
+       $logU=LoginUser::where('access_token',$access_token);
+       $logU->line_user_id=$decoded_data['userId'];
+       $logU->save();
 
 
         return;
