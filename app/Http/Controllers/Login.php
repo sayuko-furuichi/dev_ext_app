@@ -87,14 +87,12 @@ if ($logdData != null && isset($request) && $logdData != 'undifine') {
          
     $logUser->expires_in =$logdData['expires_in'];
 
-
     $logUser ->save();
 
     $up=$this->getProf($at);
 
-    return view('getUser', [
-        'users' =>$up,
-    ]);
+
+    return redirect()->route('getuser.index',[ 'users' =>$up,]);
 
 }else{
     return view('getUser');
