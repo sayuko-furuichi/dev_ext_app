@@ -71,19 +71,19 @@ class Login extends Controller
       //  dd($decoded_data['access_token']);
 
       //エラーが解決しないので急しのぎだが
-       $access_token="eyJhbGciOiJIUzI1NiJ9.8UfdPW_1j1pNobRJMei71J_7SwIv2GYqOUzKxYm5v9pgCIrIaCS81LHoPoy62iaRsAJHNrDFK-OfTSnR-YVn_z_KJNey1VGtVgec_2ZOTjrNyq-D-oHhk2TTpNmLTru-I65nzwXXnM-Anuekh6wV7Haa0NpmYUMwLfS_yt7YwN0.fYUbi8GRoLpSNG9nIFst3iKJHb_CLBbu9CW_VNphR74";
-     /*
+       $access_token=$decoded_data['access_token'];
+   
       //DBに格納
         $logUser =new LoginUser;
-        $loguser->access_token =  $decoded_data['access_token'];
-        $loguser->refresh_token = $decoded_data['refresh_token'];
-        $loguser->scope = $decoded_data['scope'];
+        $loguser->access_token = $access_token;
+        $loguser->refresh_token =$decoded_data['refresh_token'];
+        $loguser->scope =$decoded_data['scope'];
         $loguser->line_user_id = "";
-        $loguser->expires_in = $decoded_data['expires_in'];
+        $loguser->expires_in =$decoded_data['expires_in'];
 
 
         $logUser ->save();
-*/
+
         $this->getProf($access_token);
   
 
