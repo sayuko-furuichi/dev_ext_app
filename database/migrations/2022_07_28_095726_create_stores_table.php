@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
+            $table->string('store_name');
             $table->string('channel_access_token');
             $table->string('channel_secret');
             $table->timestamps();
