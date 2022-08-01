@@ -11,7 +11,7 @@
 <body align="left" width="80%"> 
 <h1>WELCOME</h1>
 
-<a href="{{route('flows.off')}}"><img src="https://dev-ext-app.herokuapp.com/storage/app/public/greenlp.png" alt="picture" width="30%"></a>
+<img src="https://dev-ext-app.herokuapp.com/storage/app/public/greenlp.png" alt="picture" width="30%">
     <a href="{{route('flows.off')}}">
     <p>Hello!!! world!!!! </p>
 </body>
