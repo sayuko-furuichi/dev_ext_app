@@ -28,7 +28,7 @@
                 <img src={{$users->prof_img_url}} width="30%" alt="prof_img">
                 @endif
             </div>
-            <div class="profile-info">
+            <div class="profile-info" >
                 {{--  <p>LINEユーザ名： <span id="displayNameField"> </span></p>  --}}
                 <p>LINEユーザ名： <input type="text" value="{{$users->line_user_name}}"></p>
 
@@ -44,7 +44,7 @@
                     @csrf
                     <a href="{{route ('getuser.post',['nm'=>'nm','id'=>'id','msg'=>'msg','os'=>'os','con'=>'con','url'=>'url'])}}"></a>
                     <button type="submit">登録する</button>  --}}
-                 <p style="color: blue">登録する</p>
+                 <p style="color: blue">登録する        ※押せません</p>
                
 
             </div>
