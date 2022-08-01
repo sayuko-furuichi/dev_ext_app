@@ -10,6 +10,8 @@
 </head>
 <body>
 <h1>WELCOME</h1>
+
+<a href="{{route('flows.off')}}"><img src="C:\xampp\htdocs\dev_ext_app\storage\app\public\greenlp.png" alt="picture"></a>
     <a href="{{route('flows.off')}}">
     <p>Hello!!! world!!!! LINEMINI APP</p>
 </body>
