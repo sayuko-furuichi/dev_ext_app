@@ -10,7 +10,7 @@
 </head>
 <body align="left" margin="10rem"> 
 <h1>WELCOME</h1>
-<div align="center">
+<div align="right">
     <a href="{{route('flows.off')}}"><img src="https://dev-ext-app.herokuapp.com/storage/app/public/greenlp.png" alt="picture" width="30%"></a>
 
 </div>
