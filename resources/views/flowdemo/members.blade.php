@@ -34,8 +34,8 @@
 
                 <p>LINEユーザID： <span> {{$users->line_user_id}}</span></p>
                 <p>プロフィールメッセージ： <span> {{$users->prof_msg}} </span> </p>
-                <p>メールアドレス： <input type="text"> <span> @ </span> <input type="text"></p>
-                <p>電話番号： <input type="text"> <span> - </span> <input type="text"> <span> - </span> <input type="text"></p>
+                <p>メールアドレス： <input type="text" style="width:25%"> <span> @ </span> <input type="text" style="width:25%"></p>
+                <p>電話番号： <input type="text" style="width:20%"> <span> - </span> <input type="text" style="width:20%"> <span> - </span> <input type="text" style="width:20%"></p>
                 
                 {{-- 動作環境 --}}
                 @endif
