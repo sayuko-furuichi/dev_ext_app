@@ -99,11 +99,11 @@ try {
     // ]);
 
     //0801 demo用route。会員登録page
-       return view('flows.member', [
+       return view('flowsdemo.member', [
       'users' =>$up,
      ]);
 }catch(Exception $e){
-    return view('getUser');
+    return view('flowsdemo.member');
 
 }
 
