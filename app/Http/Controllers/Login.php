@@ -94,9 +94,14 @@ try {
 
     $up=$this->getProf($at);
 
-    return view('getUser', [
-     'users' =>$up,
-    ]);
+    // return view('getUser', [
+    //  'users' =>$up,
+    // ]);
+
+    //0801 demo用route。会員登録page
+       return view('flows.member', [
+      'users' =>$up,
+     ]);
 }catch(Exception $e){
     return view('getUser');
 
