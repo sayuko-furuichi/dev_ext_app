@@ -18,7 +18,7 @@
 
 
     <p></p>
-    <img src="https://qr-official.line.me/sid/M/060rxmbw.png?shortenUrl=true&appendQueryParameter=oat__id%3D1053725">
+    <a href="https://lin.ee/CFPxGIJ"><img src="https://qr-official.line.me/sid/M/060rxmbw.png?shortenUrl=true&appendQueryParameter=oat__id%3D1053725"></a>
   <p></p>
     <a href="https://lin.ee/rWSlcAN">公式アカウントを友達登録する</a>
     <p></p>
