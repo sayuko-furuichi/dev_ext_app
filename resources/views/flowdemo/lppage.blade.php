@@ -8,7 +8,7 @@
     {{-- <script src="https://unpkg.com/glottologist"></script> --}}
     <title>LP</title>
 </head>
-<body align="left" margin="5em"> 
+<body align="left" margin="10rem"> 
 <h1>WELCOME</h1>
 
 <img src="https://dev-ext-app.herokuapp.com/storage/app/public/greenlp.png" alt="picture" width="30%">
