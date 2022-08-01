@@ -8,11 +8,11 @@
     {{-- <script src="https://unpkg.com/glottologist"></script> --}}
     <title>LP</title>
 </head>
-<body align="left" width="80%"> 
+<body align="left" margin="5em"> 
 <h1>WELCOME</h1>
 
 <img src="https://dev-ext-app.herokuapp.com/storage/app/public/greenlp.png" alt="picture" width="30%">
-    <a href="{{route('flows.off')}}">
+    <a href="{{route('flows.off')}}"></a>
     <p>Hello!!! world!!!! </p>
 </body>
 
