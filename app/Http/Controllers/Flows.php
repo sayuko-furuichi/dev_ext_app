@@ -17,4 +17,10 @@ class Flows extends Controller
 
         return view ('flowdemo.official');
     }
+
+    public function menber(){
+
+        return view ('flowdemo.menbers');
+    }
 }
+
