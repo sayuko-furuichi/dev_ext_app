@@ -68,4 +68,4 @@ Route::get('/stamp','App\Http\Controllers\stamp@index')-> name('stamp');
 //0801 demo
 Route::get('/lp','App\Http\Controllers\Flows@index')->name('flows.index');
 Route::get('/official','App\Http\Controllers\Flows@off')->name('flows.off');
-Route::get('/menbers','App\Http\Controllers\Flows@menber')->name('flows.menber');
+Route::get('/members','App\Http\Controllers\Flows@member')->name('flows.member');

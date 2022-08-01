@@ -18,9 +18,9 @@ class Flows extends Controller
         return view ('flowdemo.official');
     }
 
-    public function menber(){
+    public function member(){
 
-        return view ('flowdemo.menbers');
+        return view ('flowdemo.members');
     }
 }
 
