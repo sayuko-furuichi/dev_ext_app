@@ -10,8 +10,14 @@
 </head>
 <body>
 <h1>OFFICIAL SITE</h1>
-    <a href="{{route('flows.index')}}">
-    <p>Have a nice day!</p>
+
+
+<p>Have a nice day!</p>
+
+
+{{--  いらんかな？  --}}
+<p>LPがあるページへ戻る</p><a href="{{route('flows.index')}}">
+    
 </body>
 
 </html>
