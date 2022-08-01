@@ -11,6 +11,8 @@
 <body>
 <h1>OFFICIAL SITE</h1>
 
+<a href="https://lin.ee/rWSlcAN">公式アカウントを友達登録する</a>
+
 
 <p>Have a nice day!</p>
 
