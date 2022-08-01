@@ -34,14 +34,17 @@
 
                 <p>LINEユーザID： <span> {{$users->line_user_id}}</span></p>
                 <p>プロフィールメッセージ： <span> {{$users->prof_msg}} </span> </p>
+                <p>メールアドレス： <input type="text"> <span> @ </span> <input type="text"></p>
+                <p>電話番号： <input type="text"> <span> - </span> <input type="text"> <span> - </span> <input type="text"></p>
                 
                 {{-- 動作環境 --}}
                 @endif
 
-         <form method="POST" name="fm">  
+         {{--  <form method="POST" name="fm">  
                     @csrf
                     <a href="{{route ('getuser.post',['nm'=>'nm','id'=>'id','msg'=>'msg','os'=>'os','con'=>'con','url'=>'url'])}}"></a>
-                    <button type="submit">登録する</button>
+                    <button type="submit">登録する</button>  --}}
+                 <p style="color: blue">登録する</p>
                
 
             </div>
