@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- <script src="https://unpkg.com/glottologist"></script> --}}
-    <title>LP</title>
+    <title>cafeDEMO OFFICIAL SITE</title>
 </head>
-<body aligin="center" width="80%">
-<h1>OFFICIAL SITE</h1>
+<body align="center" width="80%">
+<h1 style="font-style: fantasy">OFFICIAL SITE</h1>
 
 <a href="https://lin.ee/rWSlcAN">公式アカウントを友達登録する</a>
 <p style="color: darkblue">PC版ではQRコードへ遷移、スマートフォン版では、友達登録画面へ遷移します</p>
