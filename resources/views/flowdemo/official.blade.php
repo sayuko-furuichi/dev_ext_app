@@ -14,11 +14,15 @@
 
     <hr>
     <h2>公式アカウント始めました</h2>
-    <h3>以下のバナー、リンクから遷移できます</h3>
+    <h3>以下のバナー、リンク、QRコードから遷移できます</h3>
 
+    
+    <br>
+    <img src="https://qr-official.line.me/sid/M/060rxmbw.png?shortenUrl=true&appendQueryParameter=oat__id%3D1053725">
+    <br>
     <a href="https://lin.ee/rWSlcAN">公式アカウントを友達登録する</a>
     <br>
-    <a href="https://lin.ee/rWSlcAN"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加"height="36" border="0"></a>
+    <a href="https://lin.ee/CFPxGIJ"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
     <br>
     
     <p>Have a nice day!</p>
