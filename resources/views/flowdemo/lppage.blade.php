@@ -8,12 +8,12 @@
     {{-- <script src="https://unpkg.com/glottologist"></script> --}}
     <title>LP</title>
 </head>
-<body>
+<body align="left" width="80%"> 
 <h1>WELCOME</h1>
 
-<a href="{{route('flows.off')}}"><img src="C:\xampp\htdocs\dev_ext_app\storage\app\public\greenlp.png" alt="picture"></a>
+<a href="{{route('flows.off')}}"><img src="https://dev-ext-app.herokuapp.com/storage/app/public/greenlp.png" alt="picture" width="30%"></a>
     <a href="{{route('flows.off')}}">
-    <p>Hello!!! world!!!! LINEMINI APP</p>
+    <p>Hello!!! world!!!! </p>
 </body>
 
 </html>
