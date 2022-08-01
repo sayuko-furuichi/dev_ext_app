@@ -15,6 +15,6 @@ class Flows extends Controller
 
     public function off(){
 
-        return view ('flow.off');
+        return view ('flowdemo.official');
     }
 }
