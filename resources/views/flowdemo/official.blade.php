@@ -8,7 +8,7 @@
     {{-- <script src="https://unpkg.com/glottologist"></script> --}}
     <title>LP</title>
 </head>
-<body>
+<body aligin="center" width="80%">
 <h1>OFFICIAL SITE</h1>
 
 <a href="https://lin.ee/rWSlcAN">公式アカウントを友達登録する</a>
@@ -18,7 +18,7 @@
 
 
 {{--  いらんかな？  --}}
-<p>LPがあるページへ戻る</p><a href="{{route('flows.index')}}">
+<a href="{{route('flows.index')}}">LPがあるページへ戻る</a>
     
 </body>
 
