@@ -64,3 +64,7 @@ Route::get('/stamp','App\Http\Controllers\stamp@index')-> name('stamp');
 
 //send service message
 // Route::get('/send','App\Http\Controllers\HomeController@getUser')-> name('sendsm');
+
+//0801 demo
+Route::get('/lp','App\Http\Controllers\Flows@index')->name('flows.index');
+Route::get('/official','App\Http\Controllers\Flows@off')->name('flows.off');
