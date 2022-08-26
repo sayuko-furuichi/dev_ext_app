@@ -38,9 +38,7 @@
     <p>  </p>
     <p>  </p>
     <a href="{{ route('flows.index') }}">LPがあるページへ戻る</a>
-    <script async src="https://cse.google.com/cse.js?cx=b680728e8ce524c60">
-    </script>
-    <div class="gcse-search"></div>
+    
 
 </body>
 
