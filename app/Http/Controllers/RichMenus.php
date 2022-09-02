@@ -51,21 +51,24 @@ class RichMenus extends Controller
          ]);
         
     
-         $rmList = file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
-         var_dump($rmList);
+         file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
+    
          if (strpos($http_response_header[0], '200') === false) {
-             $rmList = 'false';
+            //  $rmList = 'false';
          }
        //  $rmList=json_decode($rmList,true);
-           var_dump($rmList);
+        
 
-        return view('sendEvents.richMenuMng',[
-            'rmList' => $rmList
-        ]);
+        return view('sendEvents.richMenuMng'
+        );
     }
 
-    public function viewList(){
+    public function viewList(Request $request){
 
-        return redirect('/rich');
+        $request=json_decode($request,true);
+
+        return view('sendEvents.richMenuMng',[
+            'rmList'=>$request
+        ]);
     }
 }

@@ -73,4 +73,4 @@ Route::get('/members','App\Http\Controllers\Flows@member')->name('flows.member')
 
 //0902 リッチメニュー表示
 Route::get('/rich','App\Http\Controllers\RichMenus@index')->name('rm.index');
-Route::POST('/rich','App\Http\Controllers\RichMenus@viewList')->name('rm.list');
+Route::get('/richlist','App\Http\Controllers\RichMenus@viewList')->name('rm.list');
