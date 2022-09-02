@@ -9,6 +9,6 @@ class RichMenus extends Controller
     //
     public function index(){
 
-        return view('sendEvents.richmenuMng');
+        return view('sendEvents.richMenuMng');
     }
 }
