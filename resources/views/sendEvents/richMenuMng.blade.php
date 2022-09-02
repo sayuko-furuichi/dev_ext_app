@@ -27,11 +27,11 @@
 
         </form>
     </div>
-
+  {{--  紐付いているものはまとめて表示する処理  --}}
     <div>
         @if (isset($rmList))
-        @foreach ($rmList as $rm)
-        {{--  紐付いているものはまとめて表示する処理  --}}
+        {{--  @foreach ($rmList as $rm)
+      
         <tr>
             <td>{{$rm->name}}</td>
             <td>{{$rm->chat_bar}}</td>
@@ -39,8 +39,8 @@
             <td>{[$rm->richmenu_alias_id]}</td>
        </tr>
             
-        @endforeach
-            
+        @endforeach  --}}
+            <td>{{$rmList}}</td>
         @endif
     </div>
   
