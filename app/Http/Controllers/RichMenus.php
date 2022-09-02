@@ -56,6 +56,7 @@ class RichMenus extends Controller
          if (strpos($http_response_header[0], '200') === false) {
              $rmList = 'false';
          }
+         $rmList=json_decode($rmList,true);
 
         return view('sendEvents.richMenuMng',[
             'rmList' => $rmList
