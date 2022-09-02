@@ -57,8 +57,9 @@ class RichMenus extends Controller
              $rmList = 'false';
          }
 
-
-        return view('sendEvents.richMenuMng');
+        return view('sendEvents.richMenuMng',[
+            'rmList' => $rmList
+        ]);
     }
 
     public function viewList(){

@@ -27,6 +27,22 @@
 
         </form>
     </div>
+
+    <div>
+        @if (isset($rmList))
+        @foreach ($rmList as $rm)
+        {{--  紐付いているものはまとめて表示する処理  --}}
+        <tr>
+            <td>{{$rm->name}}</td>
+            <td>{{$rm->chat_bar}}</td>
+            <td>{[$rm->is_default]}</td>
+            <td>{[$rm->richmenu_alias_id]}</td>
+       </tr>
+            
+        @endforeach
+            
+        @endif
+    </div>
   
     
 
