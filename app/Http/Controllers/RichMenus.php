@@ -53,7 +53,7 @@ class RichMenus extends Controller
     
      $res=  file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
 
-     $res=json_decode($request,true);
+     $res=json_decode($res,true);
         $sss=json_decode($_POST,true);
         $var_dump($sss);
         $var_dump($request);
