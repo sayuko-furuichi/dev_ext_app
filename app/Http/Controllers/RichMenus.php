@@ -55,7 +55,7 @@ class RichMenus extends Controller
 
      $res=json_decode($res,true);
       //  $sss=json_decode($_POST,true);
-       // $var_dump($sss);
+        $dd($_POST);
         $var_dump($res);
 
         return view('sendEvents.richMenuMng',[
