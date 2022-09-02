@@ -66,9 +66,10 @@ class RichMenus extends Controller
     public function viewList(Request $request){
 
         $request=json_decode($request,true);
+        $sss=json_decode($_POST,true);
 
         return view('sendEvents.richMenuMng',[
-            'rmList'=>$request
+            'rmList'=>$sss
         ]);
     }
 }
