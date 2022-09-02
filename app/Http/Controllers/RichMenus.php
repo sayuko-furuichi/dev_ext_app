@@ -49,7 +49,7 @@ class RichMenus extends Controller
                  'content' => json_encode($detail, true)
              ],
          ]);
-         //   var_dump($detail);
+        
     
          $rmList = file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
          var_dump($rmList);
@@ -57,6 +57,7 @@ class RichMenus extends Controller
              $rmList = 'false';
          }
        //  $rmList=json_decode($rmList,true);
+           var_dump($rmList);
 
         return view('sendEvents.richMenuMng',[
             'rmList' => $rmList
