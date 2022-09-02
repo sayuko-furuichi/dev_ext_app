@@ -51,7 +51,16 @@ class RichMenus extends Controller
          ]);
         
     
-         file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
+     $res=  file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
+
+     $res=json_decode($request,true);
+        $sss=json_decode($_POST,true);
+        $var_dump($sss);
+        $var_dump($request);
+
+        return view('sendEvents.richMenuMng',[
+            'rmList'=>$res
+        ]);
     
          if (strpos($http_response_header[0], '200') === false) {
             //  $rmList = 'false';
