@@ -11,4 +11,9 @@ class RichMenus extends Controller
 
         return view('sendEvents.richMenuMng');
     }
+
+    public function viewList(){
+
+        return redirect('/rich');
+    }
 }
