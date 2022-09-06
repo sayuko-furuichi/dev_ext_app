@@ -41,6 +41,7 @@
           @foreach ($rmList as $rm)
           {{--  エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得  --}}
         <tr>
+            <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="30%"> </td>
         @if ($rm->is_default==1)
         <td><font color="red">{{$rm->name}}</td></font>
         @else
@@ -49,7 +50,7 @@
             <td>{{$rm->chat_bar}}</td>
             <td>{{$rm->is_default}}</td>
             <td>{{$rm->richmenu_alias_id}}</td>
-            <td>{{$rm->img}} <img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="30%"> </td>
+           
        </tr>
        @endforeach  
        @endif
