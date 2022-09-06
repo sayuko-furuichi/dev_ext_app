@@ -3,13 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RichMenu;
 
 class RichMenus extends Controller
 {
+
+  private $storeId;
+
+//  public function __constrct($storeId){
+//   $this->storeId=$storeId;
+
+
+//  }
     //
     public function index(){
+      $this->storeId=3;
+      $rmList = RichMenu::where('store_id',$storeId)->get();
 
-        return view('sendEvents.richMenuMng'
+        return view('sendEvents.richMenuMng',[
+          'rmList'=> $rmList
+        ]
         );
     }
 
@@ -68,7 +81,7 @@ class RichMenus extends Controller
      ]);
     
 
- $res=  file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=3', false, $context);
+ $res=  file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id='.$storeId, false, $context);
 
  $res=json_decode($res,true);
   //  $sss=json_decode($_POST,true);
