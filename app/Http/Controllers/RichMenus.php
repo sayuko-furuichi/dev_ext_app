@@ -93,13 +93,10 @@ class RichMenus extends Controller
   //  $sss=json_decode($_POST,true);
     // dd($_POST);
     // $var_dump($res);
-
-   
-
      if (strpos($http_response_header[0], '200') === false) {
         //  $rmList = 'false';
      }
-   //  $rmList=json_decode($rmList,true);
+   return redirect('/rich');
 
     }
 }
