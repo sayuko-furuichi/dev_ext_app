@@ -42,7 +42,7 @@ class RichMenus extends Controller
         ]);
     }
 
-    public function send(){
+    public function send(Request $request){
       $detail=([
 
         'destination'=> 'Uffd4dd52c580e1d2bb7b0a66e0ef1951',
@@ -51,8 +51,8 @@ class RichMenus extends Controller
             'type'=> 'message',
             'message'=> [
               'type'=> 'text',
-              'text'=>  'plz RichMenus',
-         //     'text2'=>  $request->msg2
+              'text'=>  'change_df_rich_menu',
+              'text2'=>  $request->rich_menu_id
           ],
             'timestamp'=> $_SERVER['REQUEST_TIME'],
             'source'=> [
