@@ -9,21 +9,15 @@
     {{--  <link rel="stylesheet" href="{{ secure_asset('css/reset.css') }}">    --}}
     {{--  <link id="import-link" rel="import" href="./sub.html">  --}}
     <script src="https://unpkg.com/glottologist"></script> 
-    <title>WELCOME</title>
+    <title>RMM</title>
 </head>
 
 <body>
 
-    <h1>home</h1>
-    <p>Richmenu maNG</p>
-
-    <p>ようこそ！ <span id="displayNameField"> </span> さん</p>
+    <h1>Rich_Menus_Manager</h1>
+    <p>デフォルトにしたいリッチメニューを選択してください</p>
+    <p>あとでエイリアスでまとめます</p>
     
-    <div>
-       
-
-      
-    </div>
   {{--  紐付いているものはまとめて表示する処理  --}}
     <div>
         <table border="3">
@@ -42,7 +36,7 @@
         <tr>
             <form action="POST">
                 @csrf
-                <a href="{{route('rm.list')}}"></a>
+                <a href="{{route('rm.send')}}"></a>
                 <button type="submit">送信</button>
             <td><input type="radio" name="rich" value={{$rm->rich_menu_id}}></td>
         </form>
