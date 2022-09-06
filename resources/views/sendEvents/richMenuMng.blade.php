@@ -41,8 +41,8 @@
           @foreach ($rmList as $rm)
 
         </tr>
-        @if ($rm->is_default==0)
-        <td style="bgcolor:gray">{{$rm->name}}</td>
+        @if ($rm->is_default==1)
+        <td><font color="red">{{$rm->name}}</td></font>
         @else
         <td>{{$rm->name}}</td>
         @endif
