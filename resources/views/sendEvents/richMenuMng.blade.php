@@ -20,12 +20,9 @@
     <p>ようこそ！ <span id="displayNameField"> </span> さん</p>
     
     <div>
-        <form action="POST">
-            @csrf
-            <a href="{{route('rm.list')}}"></a>
-            <button type="submit">送信</button>
+       
 
-        </form>
+      
     </div>
   {{--  紐付いているものはまとめて表示する処理  --}}
     <div>
@@ -43,7 +40,12 @@
           @foreach ($rmList as $rm)
           {{--  エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得  --}}
         <tr>
+            <form action="POST">
+                @csrf
+                <a href="{{route('rm.list')}}"></a>
+                <button type="submit">送信</button>
             <td><input type="radio" name="rich" value={{$rm->rich_menu_id}}></td>
+        </form>
             <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
         @if ($rm->is_default==1)
         <td><font color="red">{{$rm->name}}</td></font>
@@ -55,6 +57,7 @@
             <td>{{$rm->richmenu_alias_id}}</td>
            
        </tr>
+
        @endforeach  
        @endif
     </table>
