@@ -40,7 +40,6 @@
        </tr>
             
         @endforeach  
-            <td>{{$rmList}}</td>
         @endif
     </div>
   
