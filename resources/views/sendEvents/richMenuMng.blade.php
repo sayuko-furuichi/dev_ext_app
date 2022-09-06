@@ -40,9 +40,9 @@
         <tr>
             <td>{{$rm->name}}</td>
             <td>{{$rm->chat_bar}}</td>
-            <td>{[$rm->is_default]}</td>
-            <td>{[$rm->richmenu_alias_id]}</td>
-            <td>{[$rm->img]} <img src="{{secure_asset('img/$rm->img')}}" alt="img"></td>
+            <td>{{$rm->is_default}}</td>
+            <td>{{$rm->richmenu_alias_id}}</td>
+            <td>{{$rm->img}} <img src="{{secure_asset('img/$rm->img')}}" alt="img"></td>
        </tr>
     </table>
         @endforeach  
