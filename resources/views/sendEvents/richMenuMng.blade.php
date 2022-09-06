@@ -37,9 +37,7 @@
           @foreach ($rmList as $rm)
           {{--  エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得  --}}
         <tr>
-          
-           
-      
+
         <td><input type="radio" name="id" value={{$rm->id}}></td>
      
         <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
