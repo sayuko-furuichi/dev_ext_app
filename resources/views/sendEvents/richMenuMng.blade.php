@@ -34,9 +34,9 @@
       
         <tr>
             <td><span>name: </span> {{$rm->name}}</td>
-            <td><span>chat_bar:</span>{{$rm->chat_bar}}</td>
-            <td><span>default:</span>{[$rm->is_default]}</td>
-            <td><span>alid: </span>{[$rm->richmenu_alias_id]}</td>
+            <td><span>chat_bar:</span> {{$rm->chat_bar}}</td>
+            <td><span>default:</span> {[$rm->is_default]}</td>
+            <td><span>alid: </span> {[$rm->richmenu_alias_id]}</td>
        </tr>
             
         @endforeach  
