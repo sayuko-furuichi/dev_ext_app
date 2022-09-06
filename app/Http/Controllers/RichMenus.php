@@ -17,8 +17,12 @@ class RichMenus extends Controller
 //  }
     //
     public function index(){
+      
+      //RMはチャネル間で共有不可なので、店舗ID設定
       $this->storeId=3;
-      $rmList = RichMenu::where('store_id',$storeId)->get();
+
+      //店舗IDで検索
+      $rmList = RichMenu::where('store_id',$this->storeId)->get();
 
         return view('sendEvents.richMenuMng',[
           'rmList'=> $rmList
