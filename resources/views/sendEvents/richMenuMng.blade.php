@@ -36,22 +36,23 @@
             <th>is_default</th>
             <th>richmenu_alias_id</th>
             <th>img</th>
-            </tr>
+            <tr>
         @if (isset($rmList))
           @foreach ($rmList as $rm)
 
-        <tr>
+        </tr>
             <td>{{$rm->name}}</td>
             <td>{{$rm->chat_bar}}</td>
             <td>{{$rm->is_default}}</td>
             <td>{{$rm->richmenu_alias_id}}</td>
             <td>{{$rm->img}} <img src="{{secure_asset('img/$rm->img')}}" alt="img"></td>
        </tr>
+       @endforeach  
+       @endif
     </table>
-        @endforeach  
-        @endif
+      
     </div>
-  
+ 
     
 
     {{--  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>  --}}
