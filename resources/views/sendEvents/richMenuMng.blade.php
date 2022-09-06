@@ -48,7 +48,7 @@
             <td>{{$rm->chat_bar}}</td>
             <td>{{$rm->is_default}}</td>
             <td>{{$rm->richmenu_alias_id}}</td>
-            <td>{{$rm->img}} <img src="{{secure_asset('storage/img/demo_a.png)}}" alt="img"> </td>
+            <td>{{$rm->img}} <img src="{{secure_asset('storage/img/$rm->img)}}" alt="img"> </td>
        </tr>
        @endforeach  
        @endif
