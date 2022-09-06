@@ -31,14 +31,20 @@
     <div>
         @if (isset($rmList))
           @foreach ($rmList as $rm)
-      
+      <table border="3">
+        <th>name</th>
+        <th>chat_bar</th>
+        <th>is_default</th>
+        <th>richmenu_alias_id</th>
+        <th>img</th>
         <tr>
-            <td><span>name: </span> {{$rm->name}}</td>
-            <td><span>chat_bar:</span> {{$rm->chat_bar}}</td>
-            <td><span>default:</span> {[$rm->is_default]}</td>
-            <td><span>alid: </span> {[$rm->richmenu_alias_id]}</td>
+            <td>{{$rm->name}}</td>
+            <td>{{$rm->chat_bar}}</td>
+            <td>{[$rm->is_default]}</td>
+            <td>{[$rm->richmenu_alias_id]}</td>
+            <td>{[$rm->img]} <img src="{{secure_asset('img/$rm->img')}}" alt="img"></td>
        </tr>
-            
+    </table>
         @endforeach  
         @endif
     </div>
