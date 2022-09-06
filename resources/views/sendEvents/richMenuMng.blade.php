@@ -29,9 +29,9 @@
             <th>richmenu_alias_id</th>
             
             </tr>
-            <form action="GET" name="id">
+            <form action="POST" name="id">
                 @csrf
-                <a href="{{route('rm.send')}}"></a>
+                <a href="{{route('rm.send',['id'=>'id'])}}"></a>
                 <button type="submit">送信</button>
         @if (isset($rmList))
           @foreach ($rmList as $rm)
