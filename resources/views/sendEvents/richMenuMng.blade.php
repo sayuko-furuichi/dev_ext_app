@@ -41,7 +41,12 @@
           @foreach ($rmList as $rm)
 
         </tr>
-            <td>{{$rm->name}}</td>
+        @if ($rm->is_default==0)
+        <td style="bgcolor:gray">{{$rm->name}}</td>
+        @else
+        <td>{{$rm->name}}</td>
+        @endif
+            
             <td>{{$rm->chat_bar}}</td>
             <td>{{$rm->is_default}}</td>
             <td>{{$rm->richmenu_alias_id}}</td>
