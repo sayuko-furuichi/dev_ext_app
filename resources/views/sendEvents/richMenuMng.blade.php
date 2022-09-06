@@ -49,7 +49,6 @@
             <td>{{$rm->is_default}}</td>
             <td>{{$rm->richmenu_alias_id}}</td>
             <td>{{$rm->img}} <img src="{{secure_asset('img/demo_a.png)}}" alt="img"> </td>
-            <img src={{secure_asset('img/$rm->img')}} alt="img">
        </tr>
        @endforeach  
        @endif
