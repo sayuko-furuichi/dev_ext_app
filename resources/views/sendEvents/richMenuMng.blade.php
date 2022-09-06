@@ -30,17 +30,20 @@
             <th>richmenu_alias_id</th>
             
             </tr>
-        @if (isset($rmList))
-          @foreach ($rmList as $rm)
-          {{--  エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得  --}}
-        <tr>
             <form action="POST">
                 @csrf
                 <a href="{{route('rm.send')}}"></a>
                 <button type="submit">送信</button>
-            <td><input type="radio" name="rich" value={{$rm->rich_menu_id}}></td>
-        </form>
-            <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
+        @if (isset($rmList))
+          @foreach ($rmList as $rm)
+          {{--  エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得  --}}
+        <tr>
+          
+           
+      
+        <td><input type="radio" name="rich" value={{$rm->rich_menu_id}}></td>
+    </form>  
+        <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
         @if ($rm->is_default==1)
         <td><font color="red">{{$rm->name}}</td></font>
         @else
