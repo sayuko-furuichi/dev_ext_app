@@ -52,7 +52,7 @@ class RichMenus extends Controller
             'message'=> [
               'type'=> 'text',
               'text'=>  'change_df_rich_menu',
-              'text2'=>  $request->rich_menu_id
+              'text2'=>  $request->richmenu_id
           ],
             'timestamp'=> $_SERVER['REQUEST_TIME'],
             'source'=> [
