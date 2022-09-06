@@ -30,7 +30,7 @@
             <th>richmenu_alias_id</th>
             
             </tr>
-            <form action="POST">
+            <form action="POST" name="id">
                 @csrf
                 <a href="{{route('rm.send')}}"></a>
                 <button type="submit">送信</button>
@@ -41,7 +41,7 @@
           
            
       
-        <td><input type="radio" name="rich" value={{$rm->id}}></td>
+        <td><input type="radio" name="id" value={{$rm->id}}></td>
      
         <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
         @if ($rm->is_default==1)
