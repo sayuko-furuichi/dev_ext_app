@@ -29,14 +29,15 @@
     </div>
   {{--  紐付いているものはまとめて表示する処理  --}}
     <div>
+        <table border="3">
+            <th>name</th>
+            <th>chat_bar</th>
+            <th>is_default</th>
+            <th>richmenu_alias_id</th>
+            <th>img</th>
         @if (isset($rmList))
           @foreach ($rmList as $rm)
-      <table border="3">
-        <th>name</th>
-        <th>chat_bar</th>
-        <th>is_default</th>
-        <th>richmenu_alias_id</th>
-        <th>img</th>
+
         <tr>
             <td>{{$rm->name}}</td>
             <td>{{$rm->chat_bar}}</td>
