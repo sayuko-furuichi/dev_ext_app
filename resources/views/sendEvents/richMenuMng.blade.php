@@ -36,11 +36,11 @@
             <th>is_default</th>
             <th>richmenu_alias_id</th>
             <th>img</th>
-            <tr>
+            </tr>
         @if (isset($rmList))
           @foreach ($rmList as $rm)
 
-        </tr>
+        <tr>
         @if ($rm->is_default==1)
         <td><font color="red">{{$rm->name}}</td></font>
         @else
@@ -50,7 +50,7 @@
             <td>{{$rm->chat_bar}}</td>
             <td>{{$rm->is_default}}</td>
             <td>{{$rm->richmenu_alias_id}}</td>
-            <td>{{$rm->img}} <img src="{{secure_asset('img/$rm->img')}}" alt="img"></td>
+            <td>{{$rm->img}} <img src="{{secure_asset('img/$rm->img')}}" alt="img"> </td>
        </tr>
        @endforeach  
        @endif
