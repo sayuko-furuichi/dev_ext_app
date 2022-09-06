@@ -30,11 +30,13 @@
   {{--  紐付いているものはまとめて表示する処理  --}}
     <div>
         <table border="3">
+            <tr>
             <th>name</th>
             <th>chat_bar</th>
             <th>is_default</th>
             <th>richmenu_alias_id</th>
             <th>img</th>
+            </tr>
         @if (isset($rmList))
           @foreach ($rmList as $rm)
 
