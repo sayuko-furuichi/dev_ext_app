@@ -29,7 +29,7 @@
             <th>richmenu_alias_id</th>
             
             </tr>
-            <form action="POST" name="id">
+            <form action="GET" name="id">
                 @csrf
                 <a href="{{route('rm.send')}}"></a>
                 <button type="submit">送信</button>

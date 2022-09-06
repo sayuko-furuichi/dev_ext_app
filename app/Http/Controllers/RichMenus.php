@@ -43,6 +43,7 @@ class RichMenus extends Controller
     }
 
     public function send(Request $request){
+      $this->storeId=3;
       $detail=([
 
         'destination'=> 'Uffd4dd52c580e1d2bb7b0a66e0ef1951',
