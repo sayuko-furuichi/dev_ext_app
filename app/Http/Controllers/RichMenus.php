@@ -99,7 +99,7 @@ $detail=([
   //  $sss=json_decode($_POST,true);
     // dd($_POST);
     // $var_dump($res);
-     if ($res!=[] || $res!={}) {
+     if ($res!=[] || $res!='{}') {
         $msg='失敗しました'
      }else{
       $msg='成功しました！'
