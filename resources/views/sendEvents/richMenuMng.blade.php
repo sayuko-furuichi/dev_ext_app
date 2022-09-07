@@ -31,31 +31,33 @@
             </tr>
             <form method="POST" name="id">
                 @csrf
-                
+
                 @if (isset($rmList))
                     @foreach ($rmList as $rm)
                         {{-- エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得 --}}
                         <tr>
-
-                            <td><input type="radio" name="id" value="{{ $rm->richmenu_id }}"></td>
-                            <a href="{{ route('rm.send') }}"></a>
-            <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%"> </td>
-            @if ($rm->is_default == 1)
-                <td>
-                    <font color="red">{{ $rm->name }}
-                </td>
-                </font>
-            @else
-                <td>{{ $rm->name }}</td>
-            @endif
-            <td>{{ $rm->chat_bar }}</td>
-            <td>{{ $rm->is_default }}</td>
-            <td>{{ $rm->richmenu_alias_id }}</td>
-
-            </tr>
-            @endforeach
-            <button type="submit">送信</button>
-          </form>
+                            @if ($rm->is_default == 1)
+                                <font color="red">
+                                    <td>☆</td>
+                                    <td>{{ $rm->name }}</td>
+                                    <td>{{ $rm->chat_bar }}</td>
+                                <td>{{ $rm->is_default }}</td>
+                                <td>{{ $rm->richmenu_alias_id }}</td>
+                                </font>
+                            @else
+                                <td><input type="radio" name="id" value="{{ $rm->richmenu_id }}"></td>
+                                <a href="{{ route('rm.send') }}"></a>
+                                <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%">
+                                </td>
+                                <td>{{ $rm->name }}</td>
+                                <td>{{ $rm->chat_bar }}</td>
+                                <td>{{ $rm->is_default }}</td>
+                                <td>{{ $rm->richmenu_alias_id }}</td>
+                            @endif
+                        </tr>
+                    @endforeach
+                    <button type="submit">送信</button>
+            </form>
             @endif
         </table>
 

@@ -99,11 +99,11 @@ $detail=([
   //  $sss=json_decode($_POST,true);
     // dd($_POST);
     // $var_dump($res);
-     if ($res!=[] || $res!='{}') {
+    //  if ($res!=[] || $res!='{}') {
 
-      $msg='失敗しました';
-     }else{
-      $msg='成功しました！';
+    //   $msg='失敗しました';
+    //  }else{
+      $msg='送信しました！';
      
       //デフォルト設定の変更
       $old = RichMenu::where('is_default',1)->where('store_id',$this->storeId)->first();
@@ -115,7 +115,7 @@ $detail=([
       $new->is_dafault=1;
       $new->save();
       
-     }
+  //   }
    return redirect('/rich')->with('flash_message',$msg);
 
     }
