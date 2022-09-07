@@ -99,10 +99,21 @@ $detail=([
   //  $sss=json_decode($_POST,true);
     // dd($_POST);
     // $var_dump($res);
-     if (strpos($http_response_header[0], '200') === false) {
+     if ($res!=[] || $res!={}) {
         $msg='失敗しました'
      }else{
       $msg='成功しました！'
+     
+      //デフォルト設定の変更
+      $old = RichMenu::where('is_default',1)->where('store_id',$storeId)->first();
+      if(isset($old)){
+          $old->is_default=0;
+          $old->save();
+      }
+      $new=RichMenu::('richmenu_id',$request->id)->where('store_id',$this->storeId)->first();
+      $new->is_dafault=1;
+      $new->save();
+      
      }
    return redirect('/rich')->with('flash_message',$msg);
 
