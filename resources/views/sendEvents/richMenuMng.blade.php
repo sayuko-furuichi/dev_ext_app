@@ -58,7 +58,7 @@
                             @endif
                         </tr>
                     @endforeach
-                    <button type="submit">送信</button>
+                    <button type="submit" align="center">送信</button>
             </form>
             @endif
         </table>
