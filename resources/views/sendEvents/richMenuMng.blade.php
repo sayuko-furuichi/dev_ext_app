@@ -35,17 +35,18 @@
                 @if (isset($rmList))
                     @foreach ($rmList as $rm)
                         {{-- エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得 --}}
-                        <tr>
+                        
                             @if ($rm->is_default == 1)
-                                <font color="red">
+                            <tr style="color:red">
+                             
                                     <td>☆</td>
                                     <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%">
                                     <td>{{ $rm->name }}</td>
                                     <td>{{ $rm->chat_bar }}</td>
                                 <td>{{ $rm->is_default }}</td>
                                 <td>{{ $rm->richmenu_alias_id }}</td>
-                                </font>
                             @else
+                            <tr>
                                 <td><input type="radio" name="id" value="{{ $rm->richmenu_id }}"></td>
                                 <a href="{{ route('rm.send') }}"></a>
                                 <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%">
