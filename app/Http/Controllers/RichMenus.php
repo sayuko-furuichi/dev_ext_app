@@ -44,31 +44,61 @@ class RichMenus extends Controller
 
     public function send(Request $request){
       $this->storeId=3;
-      $detail=([
+//       $detail=([
 
-        'destination'=> 'Uffd4dd52c580e1d2bb7b0a66e0ef1951',
-        'events'=> [
-          [
-            'type'=> 'message',
-            'message'=> [
-              'type'=> 'text',
-              'text'=>  'change_df_rich_menu',
-              'text2'=>  $request->id
-          ],
-            'timestamp'=> $_SERVER['REQUEST_TIME'],
-            'source'=> [
-              'type'=> 'web',
-            ],
+//         'destination'=> 'Uffd4dd52c580e1d2bb7b0a66e0ef1951',
+//         'events'=> [
+//           [
+//             'type'=> 'message',
+//             'message'=> [
+//               'type'=> 'text',
+//               'text'=>  'change_df_rich_menu',
+//               'text2'=>  $request->id
+//           ],
+//             'timestamp'=> $_SERVER['REQUEST_TIME'],
+//             'source'=> [
+//               'type'=> 'web',
+//             ],
+// //              'replyToken'=> $rand_str,
+//             'mode'=> 'active',
+//        //     'webhookEventId'=> $rand_str,
+//             'deliveryContext'=> [
+//               'isRedelivery'=> false
+//             ]
+//           ],
+
+//         ]
+//       ]);
+
+//TODO:後で消す
+
+$detail=([
+
+  'destination'=> 'Uffd4dd52c580e1d2bb7b0a66e0ef1951',
+  'events'=> [
+    [
+      'type'=> 'message',
+      'message'=> [
+        'type'=> 'text',
+        'text'=>  'change_df_rich_menu',
+        'text2'=>  $request->richmenu_id
+    ],
+      'timestamp'=> $_SERVER['REQUEST_TIME'],
+      'source'=> [
+        'type'=> 'web',
+      ],
 //              'replyToken'=> $rand_str,
-            'mode'=> 'active',
-       //     'webhookEventId'=> $rand_str,
-            'deliveryContext'=> [
-              'isRedelivery'=> false
-            ]
-          ],
+      'mode'=> 'active',
+ //     'webhookEventId'=> $rand_str,
+      'deliveryContext'=> [
+        'isRedelivery'=> false
+      ]
+    ],
 
-        ]
-      ]);
+  ]
+]);
+
+
 
      $header = array(
          'Content-Type: application/json',
