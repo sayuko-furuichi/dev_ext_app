@@ -40,7 +40,7 @@
                             <tr style="color:red">
                              
                                     <td>☆</td>
-                                    <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%" align="center">
+                                    <td align="center"><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%" >
                                     <td>{{ $rm->name }}</td>
                                     <td>{{ $rm->chat_bar }}</td>
                                 <td>{{ $rm->is_default }}</td>
@@ -49,7 +49,7 @@
                             <tr>
                                 <td><input type="radio" name="id" value="{{ $rm->richmenu_id }}"></td>
                                 <a href="{{ route('rm.send') }}"></a>
-                                <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%" align="center">
+                                <td align="center"><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%" >
                                 </td>
                                 <td>{{ $rm->name }}</td>
                                 <td>{{ $rm->chat_bar }}</td>
