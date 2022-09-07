@@ -38,7 +38,7 @@
                         {{-- エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得 --}}
                         <tr>
 
-                            <td><button type="radio"></button><input type="hidden" name="id" value="{{ $rm->id }}" form="ids"></td>
+                            <td><input type="radio" name="id" value="{{ $rm->id }}" form="ids"></td>
                             <a href="{{ route('rm.send',['id'=>$rm->id]) }}"></a>
 
             </form>
