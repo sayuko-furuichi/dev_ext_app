@@ -72,5 +72,9 @@ Route::get('/members','App\Http\Controllers\Flows@member')->name('flows.member')
 
 
 //0902 リッチメニュー表示
-Route::get('/rich','App\Http\Controllers\RichMenus@index')->name('rm.index');
-Route::post('/rich','App\Http\Controllers\RichMenus@send')->name('rm.send');
+Route::controller(RichMenus::class)->group(function(){
+    Route::get('/rich','index')->name('rm.index');
+    Route::post('/rich','send')->name('rm.send');
+})
+// Route::get('/rich','App\Http\Controllers\RichMenus@index')->name('rm.index');
+// Route::post('/rich','App\Http\Controllers\RichMenus@send')->name('rm.send');
