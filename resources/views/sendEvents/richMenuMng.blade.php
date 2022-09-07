@@ -39,7 +39,7 @@
         <tr>
 
         <td><input type="radio" name="id" value="{{$rm->id}}"></td>
-        <a href="{{route('rm.send',['id'=>$rm->id])}}"></a>
+        <a href="{{route('rm.send')}}"></a>
       </form> 
         <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
         @if ($rm->is_default==1)
