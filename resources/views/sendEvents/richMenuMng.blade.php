@@ -31,8 +31,6 @@
             </tr>
             <form action="GET" name="id">
                 {{--  @csrf  --}}
-              
-                
                 
                 @if (isset($rmList))
                     @foreach ($rmList as $rm)
