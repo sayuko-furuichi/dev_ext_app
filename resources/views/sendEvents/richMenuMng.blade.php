@@ -31,7 +31,7 @@
             </tr>
             <form action="POST" name="id">
                 @csrf
-                <button type="submit">送信</button>
+              
                 
                 
                 @if (isset($rmList))
@@ -56,6 +56,7 @@
 
             </tr>
             @endforeach
+            <button type="submit">送信</button>
           </form>
             @endif
         </table>
