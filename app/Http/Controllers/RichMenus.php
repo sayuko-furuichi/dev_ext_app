@@ -106,7 +106,7 @@ $detail=([
       $msg='成功しました！';
      
       //デフォルト設定の変更
-      $old = RichMenu::where('is_default',1)->where('store_id',$storeId)->first();
+      $old = RichMenu::where('is_default',1)->where('store_id',$this->storeId)->first();
       if(isset($old)){
           $old->is_default=0;
           $old->save();
