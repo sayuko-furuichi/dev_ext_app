@@ -19,7 +19,7 @@
 
     {{-- 紐付いているものはまとめて表示する処理 --}}
     <div>
-        <table border="3">
+        <table border="3" align="center">
             <tr>
                 <th> </th>
                 <th>img</th>
