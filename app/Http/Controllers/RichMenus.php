@@ -112,7 +112,7 @@ $detail=([
           $old->save();
       }
       $new=RichMenu::where('richmenu_id',$request->id)->where('store_id',$this->storeId)->first();
-      $new->is_dafault=1;
+      $new->is_default=1;
       $new->save();
       
   //   }
