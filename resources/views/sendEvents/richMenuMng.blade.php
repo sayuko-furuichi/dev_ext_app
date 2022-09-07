@@ -39,6 +39,7 @@
                             @if ($rm->is_default == 1)
                                 <font color="red">
                                     <td>☆</td>
+                                    <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%">
                                     <td>{{ $rm->name }}</td>
                                     <td>{{ $rm->chat_bar }}</td>
                                 <td>{{ $rm->is_default }}</td>
