@@ -39,7 +39,7 @@
 
                             <td><input type="radio" name="id" value="{{ $rm->richmenu_id }}"></td>
                             <a href="{{ route('rm.send') }}"></a>
-            <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="50%"> </td>
+            <td><img src="{{ secure_asset('img/' . $rm->img) }}" alt="img" width="80%"> </td>
             @if ($rm->is_default == 1)
                 <td>
                     <font color="red">{{ $rm->name }}
