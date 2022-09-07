@@ -81,7 +81,7 @@ $detail=([
       'message'=> [
         'type'=> 'text',
         'text'=>  'change_df_rich_menu',
-        'text2'=>  $request->richmenu_id
+        'text2'=>  $request->id
     ],
       'timestamp'=> $_SERVER['REQUEST_TIME'],
       'source'=> [
