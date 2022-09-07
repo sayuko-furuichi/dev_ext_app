@@ -100,9 +100,10 @@ $detail=([
     // dd($_POST);
     // $var_dump($res);
      if ($res!=[] || $res!='{}') {
-        $msg='失敗しました'
+
+      $msg='失敗しました';
      }else{
-      $msg='成功しました！'
+      $msg='成功しました！';
      
       //デフォルト設定の変更
       $old = RichMenu::where('is_default',1)->where('store_id',$storeId)->first();
