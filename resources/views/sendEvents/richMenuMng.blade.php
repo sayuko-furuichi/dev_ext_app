@@ -29,8 +29,8 @@
                 <th>richmenu_alias_id</th>
 
             </tr>
-            <form action="POST" name="id">
-                @csrf
+            <form action="GET" name="id">
+                {{--  @csrf  --}}
               
                 
                 
