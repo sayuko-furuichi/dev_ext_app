@@ -31,15 +31,16 @@
             </tr>
             <form action="POST" name="id">
                 @csrf
-               
                 <button type="submit">送信</button>
+                <a href="{{route('rm.send')}}"></a>
+                
         @if (isset($rmList))
           @foreach ($rmList as $rm)
           {{--  エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得  --}}
         <tr>
 
         <td><input type="radio" name="id" value="{{$rm->id}}"></td>
-        <a href="{{route('rm.send')}}"></a>
+        
       </form> 
         <td><img src="{{secure_asset('img/'.$rm->img)}}" alt="img" width="50%"> </td>
         @if ($rm->is_default==1)
