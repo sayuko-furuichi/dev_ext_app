@@ -29,7 +29,7 @@
                 <th>richmenu_alias_id</th>
 
             </tr>
-            <form action="POST" name="ids">
+            <form action="POST" name="id">
                 @csrf
                 <button type="submit">送信</button>
                 
@@ -38,7 +38,7 @@
                         {{-- エイリアスIDでまとめる方法：aだけ取得する→aと一致するもの取得 --}}
                         <tr>
 
-                            <td><input type="radio" name="id" value="{{ $rm->id }}" form="ids"></td>
+                            <td><input type="radio" name="id" value="{{ $rm->id }}"></td>
                             <a href="{{ route('rm.send',['id'=>$rm->id]) }}"></a>
 
             </form>
