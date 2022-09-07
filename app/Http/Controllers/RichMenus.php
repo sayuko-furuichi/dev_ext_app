@@ -97,7 +97,7 @@ class RichMenus extends Controller
      if (strpos($http_response_header[0], '200') === false) {
         //  $rmList = 'false';
      }
-   return redirect('/rich');
+   return views('sendEvents.richMenuMng');
 
     }
 }
