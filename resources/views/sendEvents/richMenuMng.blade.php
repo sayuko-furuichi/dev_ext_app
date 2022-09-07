@@ -29,8 +29,8 @@
                 <th>richmenu_alias_id</th>
 
             </tr>
-            <form action="GET" name="id">
-                {{--  @csrf  --}}
+            <form method="POST" name="id">
+                @csrf
                 
                 @if (isset($rmList))
                     @foreach ($rmList as $rm)
