@@ -10,6 +10,7 @@
     <h1>Add_Liff&getCat</h1>
     <form action="{{route('server.send')}}">
         <input type="text" name="liff_name">
+        <button type="submit">LIFFアプリ作成</button>
     </form>
 </body>
 </html>
