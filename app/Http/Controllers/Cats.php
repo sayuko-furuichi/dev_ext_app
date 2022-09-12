@@ -33,7 +33,7 @@ class Cats extends Controller
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => $header,
-               'content' => json_encode($param),
+               'content' => $param,
             ],
         ]);
     
