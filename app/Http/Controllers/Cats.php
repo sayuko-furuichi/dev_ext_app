@@ -52,7 +52,7 @@ class Cats extends Controller
         $cat->cat=$resj['access_token'];
         $cat->channel_id= '1657463796';
         $cat->liff_cs='4cb5a01c2509810b67a8b98e6a88efa3';
-        $cats->save();
+        $cat->save();
 
         return view('serverApi.addLiff', [
             'token'=>$resj['access_token']
