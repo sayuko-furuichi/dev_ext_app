@@ -79,3 +79,6 @@ Route::controller(RichMenus::class)->group(function(){
     Route::post('/rich','send')->name('rm.send');
 });
 
+//0912 serverAPI Add_Liff
+Route::get('/serve','App\Http\Controllers\Cats@index')->name('server.index');
+Route::post('/serve','App\Http\Controllers\Cats@send')->name('server.send');
