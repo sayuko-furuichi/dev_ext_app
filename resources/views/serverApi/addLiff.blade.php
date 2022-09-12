@@ -9,6 +9,7 @@
 <body>
     <h1>Add_Liff&getCat</h1>
     <form action="{{route('server.send')}}" method="POST">
+        @csrf
         @if (isset($token))
             <div class="flash_message">
                <p>{{$token}}</p> 
