@@ -48,7 +48,7 @@ class Cats extends Controller
         if (strpos($http_response_header[0], '200') === false) {
                $res='request failed';
         }
-    
+  dd($res);  
         $res=json_decode($res,true);
         //CATからLIFFアプリを追加する
         return view('serverApi.addLiff',[
@@ -60,7 +60,18 @@ class Cats extends Controller
         $cat->channel_id= '';
         $cat->cs='';
         
+
+
       //  return redirect('/serve')->with('token',$res->access_token);
 
     }
+
+    public function addLiff(){
+        
+        
+        
+        return $res;
+
+    }
+
 }
