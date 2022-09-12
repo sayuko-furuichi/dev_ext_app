@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cat;
 
 class Cats extends Controller
 {
@@ -14,6 +15,9 @@ class Cats extends Controller
 
     public function getCat(Request $request)
     {
+
+
+
         return redirect('/serve');
 
     }
