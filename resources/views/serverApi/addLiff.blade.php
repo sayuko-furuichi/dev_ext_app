@@ -9,9 +9,9 @@
 <body>
     <h1>Add_Liff&getCat</h1>
     <form action="{{route('server.send')}}">
-        @if (isset('flash_message'))
-           
-                {{'flash_message'}}
+        @if (session('flash_message'))
+            <div class="flash_message">
+                {{ session('flash_message') }}
             </div>
         @endif
         <p>LIFFアプリ名:</p>
