@@ -17,7 +17,7 @@ class Cats extends Controller
     {
         //lineログインチャネルのCATを取得する
         //CSと、チャネルIDが必要
-
+        $request='';
         $param =[
             'grant_type'=>'client_credentials',
             'client_id' => '1657463796',
