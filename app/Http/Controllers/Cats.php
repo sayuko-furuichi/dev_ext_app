@@ -54,11 +54,11 @@ class Cats extends Controller
         $cat->liff_cs='4cb5a01c2509810b67a8b98e6a88efa3';
         $cat->save();
 
-        return view('serverApi.addLiff', [
-            'token'=>$resj['access_token']
-        ]);
+     
         $res=$this->addLiff($cat);
-
+        return view('serverApi.addLiff', [
+            'token'=>$res['liffId']
+        ]);
         //  return redirect('/serve')->with('token',$res->access_token);
     }
 
@@ -96,9 +96,9 @@ class Cats extends Controller
 
         $res=file_get_contents('https://api.line.me/v2/bot/audienceGroup/upload', false, $context);
         if (strpos($http_response_header[0], '200') === false) {
-              //     $res='request failed';
+                   $res='request failed';
         }
-
-        return $res;
+        $resj=json_decode($res,true);
+        return $resj;
     }
 }
