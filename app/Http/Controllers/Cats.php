@@ -52,7 +52,7 @@ class Cats extends Controller
         $res=json_decode($res,true);
         //CATからLIFFアプリを追加する
         return view('serverApi.addLiff',[
-            'token'=>$res
+            'token'=>$res['acces_token']
         ]);
 
         $cat = new Cat;
