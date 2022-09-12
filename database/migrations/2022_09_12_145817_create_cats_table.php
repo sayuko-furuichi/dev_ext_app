@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->id();
             $table->string('cat');
-            $table->string('liff_id');
+            $table->string('channel_id');
             $table->string('liff_cs');
             $table->timestamps();
         });
