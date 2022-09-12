@@ -26,11 +26,11 @@ class Cats extends Controller
         ];
         //配列をHTTPクエリパラメータにしてくれる！
         $param=http_build_query($param,"","&");
-        $cid='1657463796';
-        $cs='4cb5a01c2509810b67a8b98e6a88efa3';
+        // $cid='1657463796';
+        // $cs='4cb5a01c2509810b67a8b98e6a88efa3';
 
-        $cid = '&client_id='.$cid ;
-        $cs='&client_secret='.$cs;
+        // $cid = '&client_id='.$cid ;
+        // $cs='&client_secret='.$cs;
 
         $header = array(
             'Content-Type: application/x-www-form-urlencoded',
@@ -44,7 +44,7 @@ class Cats extends Controller
             ],
         ]);
     
-        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken', false, $context);
+        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken', false, stream_context_create($context));
         if (strpos($http_response_header[0], '200') === false) {
                $res='request failed';
         }
