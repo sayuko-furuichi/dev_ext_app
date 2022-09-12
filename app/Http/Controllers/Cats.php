@@ -25,7 +25,7 @@ class Cats extends Controller
 
         ];
         //配列をHTTPクエリパラメータにしてくれる！
-        $param=http_build_query($param,"","&");
+        $param=http_build_query($param, "", "&");
         // $cid='1657463796';
         // $cs='4cb5a01c2509810b67a8b98e6a88efa3';
 
@@ -43,35 +43,52 @@ class Cats extends Controller
                'content' => $param,
             ],
         ]);
-    
-        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken', false,$context);
+
+        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken', false, $context);
         if (strpos($http_response_header[0], '200') === false) {
-               $res='request failed';
+            $res='request failed';
         }
-  dd($res);  
-        $res=json_decode($res,true);
+  //      dd($res);
+        $resj=json_decode($res, true);
         //CATからLIFFアプリを追加する
-        return view('serverApi.addLiff',[
-            'token'=>$res
+        return view('serverApi.addLiff', [
+            'token'=>$resj['access_token']
         ]);
 
-        $cat = new Cat;
-        $cat->cat=$res['access_token'];
+        $cat = new Cat();
+        $cat->cat=$resj['access_token'];
         $cat->channel_id= '';
         $cat->cs='';
-        
 
+        $res=$this->addLiff();
 
-      //  return redirect('/serve')->with('token',$res->access_token);
-
+        //  return redirect('/serve')->with('token',$res->access_token);
     }
 
-    public function addLiff(){
-        
-        
-        
-        return $res;
+    public function addLiff()
+    {
+        $param =[
+            'grant_type'=>'client_credentials',
+            'client_id' => '1657463796',
+            'client_secret' => '4cb5a01c2509810b67a8b98e6a88efa3'
 
+        ];
+        $header = array(
+            'Content-Type: application/x-www-form-urlencoded',
+        );
+        $context = stream_context_create([
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'POST',
+                'header' => $header,
+               'content' => $param,
+            ],
+        ]);
+
+        $res=file_get_contents('https://api.line.me/liff/v1/apps', false, $context);
+        if (strpos($http_response_header[0], '200') === false) {
+            $res='request failed';
+            return $res;
+        }
     }
-
 }
