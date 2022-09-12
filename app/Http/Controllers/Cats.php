@@ -24,6 +24,11 @@ class Cats extends Controller
             'client_secret' => '4cb5a01c2509810b67a8b98e6a88efa3'
 
         ];
+        $cid='1657463796';
+        $cs='4cb5a01c2509810b67a8b98e6a88efa3';
+
+        $cid = '&client_id='.$cid ;
+        $cs='&client_secret='.$cs;
 
         $header = array(
             'Content-Type: application/x-www-form-urlencoded',
@@ -33,11 +38,11 @@ class Cats extends Controller
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => $header,
-               'content' => $param,
+              // 'content' => $param,
             ],
         ]);
     
-        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken', false, $context);
+        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken?grant_type=client_credentials'.$cid . $cs, false, $context);
         if (strpos($http_response_header[0], '200') === false) {
                $res='request failed';
         }
@@ -48,6 +53,11 @@ class Cats extends Controller
             'token'=>$res['access_token']
         ]);
 
+        $cat = new Cat;
+        $cat->cat=$res['access_token'];
+        $cat->channel_id= '';
+        $cat->cs='';
+        
       //  return redirect('/serve')->with('token',$res->access_token);
 
     }
