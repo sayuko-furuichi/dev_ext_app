@@ -46,15 +46,16 @@ class Cats extends Controller
   //      dd($res);
         $resj=json_decode($res, true);
         //CATからLIFFアプリを追加する
+
+
+        $cat = new Cat;
+        $cat->cat=$resj['access_token'];
+        $cat->channel_id= '1657463796';
+        $cat->liff_cs='4cb5a01c2509810b67a8b98e6a88efa3';
+        
         return view('serverApi.addLiff', [
             'token'=>$resj['access_token']
         ]);
-
-        $cat = new Cat();
-        $cat->cat=$resj['access_token'];
-        $cat->channel_id= '';
-        $cat->cs='';
-
         $res=$this->addLiff();
 
         //  return redirect('/serve')->with('token',$res->access_token);
@@ -76,7 +77,7 @@ class Cats extends Controller
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => $header,
-               'content' => $param,
+               'content' => json_encode($param)
             ],
         ]);
 
