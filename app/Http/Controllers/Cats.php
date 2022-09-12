@@ -57,7 +57,7 @@ class Cats extends Controller
      
         $res=$this->addLiff($cat);
         return view('serverApi.addLiff', [
-            'token'=>$res['liffId']
+            'token'=>$res
         ]);
         //  return redirect('/serve')->with('token',$res->access_token);
     }
