@@ -42,7 +42,7 @@ class Cats extends Controller
                $res='request failed';
         }
     
-        $res=json_encode($res,true);
+        $res=json_decode($res,true);
         //CATからLIFFアプリを追加する
         return view('serverApi.addLiff',[
             'token'=>$res
