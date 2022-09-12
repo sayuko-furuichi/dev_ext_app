@@ -12,7 +12,7 @@
         @csrf
         @if (isset($token))
             <div class="flash_message">
-               <p>{{$token}}</p> 
+               <p>LIFF ID: {{$token}}</p> 
             </div>
         @endif
         <p>LIFFアプリ名:</p>

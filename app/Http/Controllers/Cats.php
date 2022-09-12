@@ -17,7 +17,7 @@ class Cats extends Controller
     {
         //lineログインチャネルのCATを取得する
         //CSと、チャネルIDが必要
-        $request='';
+       $name= $request->liff_name;
         $param =[
             'grant_type'=>'client_credentials',
             'client_id' => '1657463796',
@@ -62,7 +62,7 @@ class Cats extends Controller
         //  return redirect('/serve')->with('token',$res->access_token);
     }
 
-    public function addLiff($cat)
+    public function addLiff($cat,$name)
     {
         $param=[
             'view'=> [
@@ -70,7 +70,7 @@ class Cats extends Controller
                 'url'=> 'https://example.com/myservice'
             ],
         
-            'description'=> 'APIで作ったLIFF',
+            'description'=> $name,
             'features'=> [
                 'ble'=> false,
                 'qrCode'=> true
