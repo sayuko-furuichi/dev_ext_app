@@ -57,7 +57,7 @@ class Cats extends Controller
      
         $res=$this->addLiff($cat);
         return view('serverApi.addLiff', [
-            'token'=>$res
+            'token'=>$res['liffId']
         ]);
         //  return redirect('/serve')->with('token',$res->access_token);
     }
@@ -69,6 +69,7 @@ class Cats extends Controller
                 'type'=> 'full',
                 'url'=> 'https://example.com/myservice'
             ],
+        
             'description'=> 'APIで作ったLIFF',
             'features'=> [
                 'ble'=> false,
@@ -94,7 +95,7 @@ class Cats extends Controller
             ],
         ]);
 
-        $res=file_get_contents('https://api.line.me/v2/bot/audienceGroup/upload', false, $context);
+        $res=file_get_contents('https://api.line.me/liff/v1/apps', false, $context);
         if (strpos($http_response_header[0], '200') === false) {
                    $res='request failed';
         }
