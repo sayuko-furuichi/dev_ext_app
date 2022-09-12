@@ -13,9 +13,9 @@ class Cats extends Controller
         return view('serverApi.addLiff');
     }
 
-    public function getCat(Request $request)
+    public function send(Request $request)
     {
-        
+
 
 
         return redirect('/serve')->with('flash_message','送信しました');
