@@ -24,6 +24,8 @@ class Cats extends Controller
             'client_secret' => '4cb5a01c2509810b67a8b98e6a88efa3'
 
         ];
+        //配列をHTTPクエリパラメータにしてくれる！
+        $param=http_build_query($param,"","&");
         $cid='1657463796';
         $cs='4cb5a01c2509810b67a8b98e6a88efa3';
 
@@ -38,11 +40,11 @@ class Cats extends Controller
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => $header,
-              // 'content' => $param,
+               'content' => $param,
             ],
         ]);
     
-        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken?grant_type=client_credentials'.$cid . $cs, false, $context);
+        $res=file_get_contents('https://api.line.me/v2/oauth/accessToken', false, $context);
         if (strpos($http_response_header[0], '200') === false) {
                $res='request failed';
         }
