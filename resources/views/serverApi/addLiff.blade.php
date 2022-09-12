@@ -9,6 +9,11 @@
 <body>
     <h1>Add_Liff&getCat</h1>
     <form action="{{route('server.send')}}">
+        @if (session('flash_message'))
+            <div class="flash_message">
+                {{ session('flash_message') }}
+            </div>
+        @endif
         <p>LIFFアプリ名:</p>
         <input type="text" name="liff_name">
         <button type="submit">LIFFアプリ作成</button>

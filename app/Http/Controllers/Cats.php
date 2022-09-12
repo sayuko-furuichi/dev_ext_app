@@ -15,7 +15,7 @@ class Cats extends Controller
 
     public function getCat(Request $request)
     {
-
+        
 
 
         return redirect('/serve')->with('flash_message','送信しました');
