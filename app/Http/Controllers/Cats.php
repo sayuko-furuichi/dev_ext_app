@@ -18,7 +18,7 @@ class Cats extends Controller
 
 
 
-        return redirect('/serve');
+        return redirect('/serve')->flash('flash_message','送信しました');
 
     }
 }
