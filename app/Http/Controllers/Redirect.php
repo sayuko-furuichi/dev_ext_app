@@ -35,7 +35,7 @@ class Redirect extends Controller
 
 
 //QRコード生成
-       QrCode::format('png')->generate('https://dev-ext-app.herokuapp.com/public/redirect?store=4&route='.$nwRpute->id,secure_asset('img/qr/'.$nwRpute->id));
+       QrCode::format('png')->generate('https://dev-ext-app.herokuapp.com/public/redirect?store=4&route='.$nwRpute->id,secure_asset('img/qr/'.$nwRpute->id .'.png'));
         $qr=secure_asset('img/qr/'.$nwRpute->id);
             $qrs[]=['qr'=>$qr,'url'=>'https://dev-ext-app.herokuapp.com/public/redirect?store=4&route='.$nwRpute->id];
         return redirect('/redirect/index')->with($qrs);
