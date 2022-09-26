@@ -15,8 +15,9 @@
 
         <input type="submit" value="追加">
     </form>
-@if (isset($qr))
-<p>{{$qr}}</p>
+@if (isset($qrs))
+<p>{{$qrs['qr']}}</p>
+<p>{{$qrs['url']}}</p>
 @endif
 </body>
 </html>
