@@ -16,7 +16,7 @@
         <input type="submit" value="追加">
 
     </form>
-<!-- Google tag (gtag.js) -->
+{{--  <!-- Google tag (gtag.js) -->  --}}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q4M2C2Z43"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
