@@ -84,4 +84,4 @@ Route::get('/serve','App\Http\Controllers\Cats@index')->name('server.index');
 Route::post('/serve','App\Http\Controllers\Cats@send')->name('server.send');
 
 //公式アカウントへredirect
-Route::get('/redirect/{store?}/{route?}','App\Http\Controllers\Redirect@index')->name('redirect.index');
+Route::get('/redirect/{store?}/{route?}','App\Http\Controllers\Redirect@redirect')->name('redirect.index');
