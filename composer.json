@@ -50,7 +50,12 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [],
+            "providers": [
+                "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
+            ],
+            "aliases": {
+                "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
         }
     },
     "config": {
@@ -60,4 +65,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+}
 }
