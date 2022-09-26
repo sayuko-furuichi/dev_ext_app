@@ -25,7 +25,10 @@ class Redirect extends Controller
     function index(){
         return view('inflows');
     }
-    function add(){
+    function add(Request $request){
+        $nwRoute = new Route;
+        $nwRoute->route_name=$request->name;
+        $nwRoute->save();
         return redirect('/redirect/index');
     }
 }
