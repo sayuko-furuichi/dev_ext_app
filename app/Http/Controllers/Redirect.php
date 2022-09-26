@@ -21,4 +21,11 @@ class Redirect extends Controller
 
         return redirect($store->account_url);
     }
+
+    function index(){
+        return view('inflows');
+    }
+    function add(){
+        return redirect('/redirect/index');
+    }
 }
