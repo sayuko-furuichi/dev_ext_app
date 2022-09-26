@@ -14,8 +14,17 @@
         <p><input type="text" name="name"></p>
 
         <input type="submit" value="追加">
-    </form>
 
+    </form>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q4M2C2Z43"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7Q4M2C2Z43');
+</script>
     
 @if (isset($qrs))
 <img src="{{$qrs['qr']}}" alt="">
