@@ -82,3 +82,6 @@ Route::controller(RichMenus::class)->group(function(){
 //0912 serverAPI Add_Liff
 Route::get('/serve','App\Http\Controllers\Cats@index')->name('server.index');
 Route::post('/serve','App\Http\Controllers\Cats@send')->name('server.send');
+
+//公式アカウントへredirect
+Route::get('/redirect/{?store}/{route}','App\Http\Controllers\redirect@index')->name('server.index');
