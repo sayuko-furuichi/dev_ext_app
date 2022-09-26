@@ -16,7 +16,7 @@
         <input type="submit" value="追加">
     </form>
 @if (isset($qrs))
-<p>{{$qrs['qr']}}</p>
+<img src="{{$qrs['qr']}}" alt="">
 <p>{{$qrs['url']}}</p>
 @endif
 </body>
