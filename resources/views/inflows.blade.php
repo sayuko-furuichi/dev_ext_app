@@ -25,7 +25,7 @@
 
   gtag('config', 'G-7Q4M2C2Z43');
 </script>
-    <a href="https://lin.ee/8zMNLcl"> LINE</a>
+    <a href="https://lin.ee/JrQxxw7"> LINE</a>
 @if (isset($qrs))
 <img src="{{$qrs['qr']}}" alt="">
 <p>{{$qrs['url']}}</p>
