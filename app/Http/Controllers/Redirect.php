@@ -7,9 +7,9 @@ use App\Models\Store;
 use App\Models\Route;
 use App\Models\LineuserInflowRoute;
 
- use App\SimpleSoftwareIO\QrCode\QrCodeServiceProvider;
- use App\SimpleSoftwareIO\QrCode;
-// use Qrcode;
+// use App\SimpleSoftwareIO\QrCode\QrCodeServiceProvider;
+ use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 
 class Redirect extends Controller
 {
