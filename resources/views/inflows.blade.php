@@ -15,7 +15,8 @@
 
         <input type="submit" value="追加">
     </form>
-    <p>{!! QrCode::generate('aaaaa') !!}</p>
+
+    
 @if (isset($qrs))
 <img src="{{$qrs['qr']}}" alt="">
 <p>{{$qrs['url']}}</p>
