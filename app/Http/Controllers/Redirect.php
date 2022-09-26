@@ -15,7 +15,7 @@ class Redirect extends Controller
        $route=Route::where('id',$request->route)->first();
 
        $inflow = new LineuserInflowRoute;
-       $inflow->store=$store->id;
+       $inflow->store_id=$store->id;
        $inflow->route=$route->route_name;
        $inflow->save();
 
