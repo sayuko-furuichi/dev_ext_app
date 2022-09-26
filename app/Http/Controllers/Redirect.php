@@ -29,6 +29,10 @@ class Redirect extends Controller
         $nwRoute = new Route;
         $nwRoute->route_name=$request->name;
         $nwRoute->save();
-        return redirect('/redirect/index');
+        $nwRoute->id;
+
+//QRコード生成
+        $qr = QrCode::format('png')->generate('https://dev-ext-app.herokuapp.com/public/redirect?store=4&route='.$nwRpute->id);
+        return redirect('/redirect/index')->with($qr);
     }
 }
