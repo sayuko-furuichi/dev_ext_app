@@ -7,7 +7,7 @@
     <title>user_inflow_access</title>
 </head>
 <body>
-    <h1>流入経路_アクセス履歴</h1>
+    <h1>まる屋　流入経路_アクセス履歴</h1>
 
     <table border="3">
         <tr>
