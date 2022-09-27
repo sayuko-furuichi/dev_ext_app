@@ -26,6 +26,8 @@ class Redirect extends Controller
     }
 
     function index(){
+        $store=Route::where('store_id',4)->first();
+
         return view('inflows');
     }
     function add(Request $request){
@@ -43,7 +45,8 @@ class Redirect extends Controller
      $url='https://dev-ext-app.herokuapp.com/public/redirect?store=4&route='.$nwRoute->id;
             return view('inflows',[
             'qr'=>$qr,
-            'url'=>$url
+            'url'=>$url,
+            'name'=>$request->name
         ]);
     }
 }

@@ -17,7 +17,8 @@
 
     </form>
 @if (isset($qr) && isset($url))
-<img src="{{secure_asset($qr)}}" alt="">
+<p>流入経路：</p>
+<img src="{{secure_asset($qr)}}" alt="QRコード">
 <p>{{$url}}</p>
 @endif
 </body>
