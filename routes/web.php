@@ -84,7 +84,7 @@ Route::get('/serve','App\Http\Controllers\Cats@index')->name('server.index');
 Route::post('/serve','App\Http\Controllers\Cats@send')->name('server.send');
 
 //公式アカウントへredirect
-
+Route::get('/redirect','App\Http\Controllers\Redirect@redirect')->name('redirect.index');
 Route::get('/redirect/index','App\Http\Controllers\Redirect@index')->name('inflow.index');
 Route::post('/redirect/index','App\Http\Controllers\Redirect@add')->name('inflow.add');
 
