@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class LineuserInflowRoute extends Model
 {
     use HasFactory;
+    protected $table ='lineuser_inflow_routes';
 }
