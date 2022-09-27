@@ -16,16 +16,6 @@
         <input type="submit" value="追加">
 
     </form>
-{{--  <!-- Google tag (gtag.js) -->  --}}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q4M2C2Z43"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7Q4M2C2Z43');
-</script>
-    <a href="https://lin.ee/JrQxxw7"> LINE</a>
 @if (isset($qrs))
 <img src="{{$qrs['qr']}}" alt="">
 <p>{{$qrs['url']}}</p>
