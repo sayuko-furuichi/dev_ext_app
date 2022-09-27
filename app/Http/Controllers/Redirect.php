@@ -26,7 +26,7 @@ class Redirect extends Controller
     }
 
     function index(){
-        $route=Route::where('store_id','4')->first();
+    //    $route=Route::where('store_id','4')->first();
 
         return view('inflows');
     }
@@ -36,7 +36,7 @@ class Redirect extends Controller
         $nwRoute->store_id=4;
         $nwRoute->url='';
         $nwRoute->save();
-        
+
 
 //QRコード生成
   //     QrCode::generate('https://dev-ext-app.herokuapp.com/public/redirect?store=4&route='.$nwRoute->id,secure_asset('img/qr/'.$nwRoute->id .'.png'));
