@@ -26,7 +26,7 @@ class Redirect extends Controller
     }
 
     function index(){
-        $store=Route::where('store_id',4)->first();
+        $store=Route::where('store_id','4')->first();
 
         return view('inflows');
     }
