@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="{{route('redirect.access')}}">履歴確認へ</a>
     <h1>まるや　流入経路設定</h1>
     <form action="{{route('inflow.add')}}" method="POST">
         @csrf
