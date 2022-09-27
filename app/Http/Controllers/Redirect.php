@@ -22,7 +22,7 @@ class Redirect extends Controller
        $inflow->route=$route->route_name;
        $inflow->save();
 
-        return redirect($store->account_url);
+        return $store->account_url;
     }
 
     function index(){
