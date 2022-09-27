@@ -16,9 +16,9 @@
         <input type="submit" value="追加">
 
     </form>
-@if (isset($qrs))
-<img src="{{$qrs['qr']}}" alt="">
-<p>{{$qrs['url']}}</p>
+@if (isset($qr) && isset($url))
+<img src="{{secure_asset($qr)}}" alt="">
+<p>{{$url}}</p>
 @endif
 </body>
 </html>
