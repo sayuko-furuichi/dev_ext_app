@@ -50,4 +50,13 @@ class Redirect extends Controller
             'name'=>$request->name
         ]);
     }
+
+function access(){
+    $acs = lineuserInflowRoute::where('store_id',4)->get();
+    return view('access',[
+        'items' =>$acs
+    ]);
+
+}
+
 }
