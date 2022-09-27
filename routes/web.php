@@ -88,6 +88,6 @@ Route::get('/redirect','App\Http\Controllers\Redirect@redirect')->name('redirect
 Route::get('/redirect/index','App\Http\Controllers\Redirect@index')->name('inflow.index');
 Route::post('/redirect/index','App\Http\Controllers\Redirect@add')->name('inflow.add');
 
-Route::group(['prefix' => '/access', 'as' => 'getinflow' ], function () {
-    Route::get('/', 'App\Http\Controllers\GetInflowRoutes@access')-> name('.access');
+Route::group(['prefix' => '/access', 'as' => 'redirect' ], function () {
+    Route::get('/', 'App\Http\Controllers\Redirect@access')-> name('.access');
 });
