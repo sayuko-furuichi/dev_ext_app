@@ -39,7 +39,7 @@ class Flows extends Controller
                 'message'=> [
                   'type'=> 'message',
                   'text'=>  '申し込み完了',
-                  //'text2'=>  $request->id
+                  'text2'=>  $request->user
               ],
                 'timestamp'=> $_SERVER['REQUEST_TIME'],
                 'source'=> [
