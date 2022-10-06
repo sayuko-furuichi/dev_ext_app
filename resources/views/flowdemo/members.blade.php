@@ -47,12 +47,13 @@
                     <button type="submit">登録する</button>  --}}
                     @if(isset($req->user))
                 <form action="{{route('flows.rgst')}}" method="POST">
+                    @csrf
                          <input type="submit" value="登録する">
                
-                     <div>{{$req->user}}<input type="hidden" value="{{$req->user}}"></div>
+                     <div>{{$req->user}}<input type="hidden" value="{{$req->user}}" name="user"></div>
                  </form>
                  @endif
-                 
+
             </div>
         </div>
 
