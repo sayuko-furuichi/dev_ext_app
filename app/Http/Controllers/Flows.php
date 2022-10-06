@@ -22,5 +22,11 @@ class Flows extends Controller
 
         return view ('flowdemo.members');
     }
+
+    public function add(Request $request){
+
+        return view ('flowdemo.members',['req'=>$request]);
+    }
+
 }
 

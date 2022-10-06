@@ -70,6 +70,7 @@ Route::get('/stamp','App\Http\Controllers\stamp@index')-> name('stamp');
 Route::get('/lp','App\Http\Controllers\Flows@index')->name('flows.index');
 Route::get('/official','App\Http\Controllers\Flows@off')->name('flows.off');
 Route::get('/members','App\Http\Controllers\Flows@member')->name('flows.member');
+Route::get('/addMember','App\Http\Controllers\Flows@add')->name('flows.add');
 
 
 //0902 リッチメニュー表示

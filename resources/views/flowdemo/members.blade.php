@@ -46,7 +46,7 @@
                     <button type="submit">登録する</button>  --}}
                  <p style="color: blue">登録する        ※押せません</p>
                
-
+            <div>{{$req->user}}<input type="hidden" value="{{$req->user}}"></div>
             </div>
         </div>
 </form>
