@@ -43,15 +43,19 @@
          {{--  <form method="POST" name="fm">  
                     @csrf
                     <a href="{{route ('getuser.post',['nm'=>'nm','id'=>'id','msg'=>'msg','os'=>'os','con'=>'con','url'=>'url'])}}"></a>
+                   
                     <button type="submit">登録する</button>  --}}
-                    <form action="" method="POST">
-                 <input type="submit" value="登録する">
+                    @if(isset($req->user))
+                <form action="{{route('flows.rgst')}}" method="POST">
+                         <input type="submit" value="登録する">
                
-            <div>{{$req->user}}<input type="hidden" value="{{$req->user}}"></div>
-        </form>
+                     <div>{{$req->user}}<input type="hidden" value="{{$req->user}}"></div>
+                 </form>
+                 @endif
+                 
             </div>
         </div>
-</form>
+
         {{--  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>  --}}
         <script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
