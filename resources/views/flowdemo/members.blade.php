@@ -44,9 +44,11 @@
                     @csrf
                     <a href="{{route ('getuser.post',['nm'=>'nm','id'=>'id','msg'=>'msg','os'=>'os','con'=>'con','url'=>'url'])}}"></a>
                     <button type="submit">登録する</button>  --}}
-                 <p style="color: blue">登録する        ※押せません</p>
+                    <form action="" method="POST">
+                 <input type="submit" value="登録する">
                
             <div>{{$req->user}}<input type="hidden" value="{{$req->user}}"></div>
+        </form>
             </div>
         </div>
 </form>
