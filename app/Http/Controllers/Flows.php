@@ -75,6 +75,7 @@ class Flows extends Controller
           
            $res=  file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=54', false, $context);
           
+           dd($res);
             //  $sss=json_decode($_POST,true);
               // dd($_POST);
               // $var_dump($res);
