@@ -72,7 +72,7 @@ class Flows extends Controller
                ]);
               
           
-           $res=  file_get_contents('https://dev-bot0722.herokuapp.com/public/api/callback?store_id=54', false, $context);
+           $res=  file_get_contents('https://dev1.softnext.co.jp/commons/linebot/public/api/callback?store_id=1', false, $context);
           
 
             //  $sss=json_decode($_POST,true);
