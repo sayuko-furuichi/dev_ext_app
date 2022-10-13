@@ -57,9 +57,9 @@ class Flows extends Controller
             ]
           ]);
 
-          
+          $channelSecret='df7b94e4f3a2616069aa01f3693cd8ad';
 
-        $hash = hash_hmac('sha256', $body, $this->channelSecret, true);
+        $hash = hash_hmac('sha256', $detail, $channelSecret, true);
         $signature = base64_encode($hash);
        
     
