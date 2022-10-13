@@ -59,7 +59,9 @@ class Flows extends Controller
 
           $channelSecret='df7b94e4f3a2616069aa01f3693cd8ad';
 
-        $hash = hash_hmac('sha256', $detail, $channelSecret, true);
+          $encode=json_encode($detail);
+
+        $hash = hash_hmac('sha256', $encode, $channelSecret, true);
         $signature = base64_encode($hash);
        
     
@@ -76,7 +78,7 @@ class Flows extends Controller
                        'ignore_errors' => true,
                        'method' => 'POST',
                        'header' => implode("\r\n", $header),
-                       'content' => json_encode($detail, true)
+                       'content' => $encode
                    ],
                ]);
               
