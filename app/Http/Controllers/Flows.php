@@ -43,6 +43,7 @@ class Flows extends Controller
                 'timestamp'=> $_SERVER['REQUEST_TIME'],
                 'source'=> [
                   'type'=> 'web',
+                  'userId'=> $request->user
                 ],
                 'mode'=> 'active',
                 'deliveryContext'=> [
