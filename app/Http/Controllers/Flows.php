@@ -37,12 +37,12 @@ class Flows extends Controller
                 'message'=> [
                   'type'=> 'message',
                   'text'=>  '完了',
+                  //line_user_idが必要
                   'text2'=>  $request->user
               ],
                 'timestamp'=> $_SERVER['REQUEST_TIME'],
                 'source'=> [
                   'type'=> 'web',
-                  'userId'=> $request->user
                 ],
                 'mode'=> 'active',
                 'deliveryContext'=> [
