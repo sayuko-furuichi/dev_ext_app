@@ -31,8 +31,6 @@ class Flows extends Controller
     public function rgst(Request $request)
     {
         $detail=([
-
-            // 'destination'=> 'Uffd4dd52c580e1d2bb7b0a66e0ef1951',
             'events'=> [
               [
                 'type'=> 'message',
@@ -46,58 +44,44 @@ class Flows extends Controller
                   'type'=> 'web',
                   'userId'=> $request->user
                 ],
-          //              'replyToken'=> $rand_str,
                 'mode'=> 'active',
-           //     'webhookEventId'=> $rand_str,
                 'deliveryContext'=> [
                   'isRedelivery'=> false
                 ]
               ],
-          
+
             ]
           ]);
 
-          $channelSecret='df7b94e4f3a2616069aa01f3693cd8ad';
+        //チャネルアクセストークンを秘密鍵として、requestBodyをハッシュ化する
+        #commons風アカウントのCS
+        $channelSecret='df7b94e4f3a2616069aa01f3693cd8ad';
 
-          $encode=json_encode($detail);
+        $encode=json_encode($detail);
 
         $hash = hash_hmac('sha256', $encode, $channelSecret, true);
         $signature = base64_encode($hash);
-       
-    
 
+        //ハッシュ化したものを[x_demo_signature]としてheaderにつける
+        $header = array(
+            'Content-Type: application/json',
+          'x_demo_signature:'. $signature,
+        );
 
-               $header = array(
-                   'Content-Type: application/json',
-                 'x_demo_signature:'. $signature,
-               );
-          
-               //試しに、create richmenuにする
-               $context = stream_context_create([
-                   'http' => [
-                       'ignore_errors' => true,
-                       'method' => 'POST',
-                       'header' => implode("\r\n", $header),
-                       'content' => $encode
-                   ],
-               ]);
-              
-          
-           $res=  file_get_contents('https://dev1.softnext.co.jp/commons/linebot/public/api/callback?store_id=1', false, $context);
-          
+        //試しに、create richmenuにする
+        $context = stream_context_create([
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'POST',
+                'header' => implode("\r\n", $header),
+                'content' => $encode
+            ],
+        ]);
 
-            //  $sss=json_decode($_POST,true);
-              // dd($_POST);
-              // $var_dump($res);
-              //  if ($res!=[] || $res!='{}') {
-          
-              //   $msg='失敗しました';
-              //  }else{
-                $msg='送信しました！';
-               
-
+        //Botが起動するURLへPostする
+        $res=  file_get_contents('https://dev1.softnext.co.jp/commons/linebot/public/api/callback?store_id=1', false, $context);
+        $msg='送信しました！';
 
         return redirect('/addMember');
     }
 }
-
