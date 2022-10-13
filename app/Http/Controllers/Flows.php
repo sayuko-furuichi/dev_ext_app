@@ -56,9 +56,18 @@ class Flows extends Controller
           
             ]
           ]);
+
+          
+
+        $hash = hash_hmac('sha256', $body, $this->channelSecret, true);
+        $signature = base64_encode($hash);
+       
+    
+
+
                $header = array(
                    'Content-Type: application/json',
-                 'x_demo_signature: demo',
+                 'x_demo_signature:'. $signature,
                );
           
                //試しに、create richmenuにする
