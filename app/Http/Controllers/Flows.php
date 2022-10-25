@@ -68,8 +68,8 @@ class Flows extends Controller
             'Content-Type: application/json',
           'x_demo_signature:'. $signature,
         );
+dd($encode);
 
-        //試しに、create richmenuにする
         $context = stream_context_create([
             'http' => [
                 'ignore_errors' => true,
